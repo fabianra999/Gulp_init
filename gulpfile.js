@@ -10,6 +10,7 @@ var imagemin = require('gulp-imagemin'),
 var minifycss = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -26,9 +27,7 @@ gulp.task('bs-reload', function () {
 gulp.task('images', function(){
   gulp.src('src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 9, progressive: true, interlaced: true })))
-  .pipe(gulp.dest('dist/images/'))
-  //  .pipe(imagemin())
-    //.pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/images/'))
 });
 
 gulp.task('styles', function(){
@@ -38,11 +37,13 @@ gulp.task('styles', function(){
       console.log(error.message);
       this.emit('end');
     }}))
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest('dist/styles/'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
+    .pipe(sourcemaps.write('dist/styles/'))
     .pipe(gulp.dest('dist/styles/'))
     .pipe(browserSync.reload({stream:true}))
 });

@@ -1,13 +1,25 @@
+// Import Base
 @import 'base/variables';
+@import 'base/placeholder';
+@import 'base/mixin';
 
 @import 'base/normalize';
 @import 'base/global';
 
 // Import Components
-// @import 'components/header';
+@import 'components/header';
+@import 'components/nav';
+@import 'components/footer';
 
 // Import Layouts
-// @import 'layouts/home';
+@import 'layouts/home';
+
+// Import Mobile
+@import 'mobile/m-screen';
+
+
 
 // Import Plugins
 // @import 'plugins/plugin';
+
+
