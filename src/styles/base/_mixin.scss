@@ -1,1 +1,19 @@
+// Trozo de código reutilizable dinámicamente.
 // @mixin mixinUno ($color){color: $color;} - llamado @include mixinUno(red);
+
+/* Mixin
+===================================================*/
+@mixin test-mixin($l-h, $fn-s, $ds-p){
+  display: $l-h;
+  line-height: $fn-s;
+  font-size: $ds-p;
+  padding: 1em;
+  @content; // permite agregar contenido al mixin en proximos llamados  @include test-mixin() { text-align: center;};
+}
+.test-mixin{
+  @include test-mixin(
+    $l-h:1em,
+    $fn-s:12px,
+    $ds-p:block
+    ) { text-align: center;};
+}

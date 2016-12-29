@@ -1,6 +1,21 @@
-// $varables: valor; - tyene scout  - saca hijo del padre  @at-root p{color: $tomato_1;}
+// $varables: valor; 
+// - tyene scout 
+// - Interpolacion: saca hijo del padre  @at-root p{color: $tomato_1;}
 
-/*varables
+
+//               Ejempl0:
+// $var: 2;
+// $company: youtube;
+
+// .div-#{$company}:nth-child(#{$var}){
+//  background: red;
+//  &::before {
+//    content: "Bienvenido a #{$company}";
+//  }
+// }
+
+
+/* Varables
 ===================================================*/
 
 //colores
