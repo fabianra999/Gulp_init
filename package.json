@@ -1,6 +1,6 @@
 {
-  "name": "holamundo",
-  "version": "1.0.0",
+	"name": "noBrowser",
+  "version": "0.1.0",
   "description": "Quench",
   "main": "gulpfile.js",
   "scripts": {
