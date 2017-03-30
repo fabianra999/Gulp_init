@@ -1,19 +1,55 @@
 // Trozo de código reutilizable dinámicamente.
 // @mixin mixinUno ($color){color: $color;} - llamado @include mixinUno(red);
 
-/* Mixin
-===================================================*/
 @mixin test-mixin($l-h, $fn-s, $ds-p){
-  display: $l-h;
-  line-height: $fn-s;
-  font-size: $ds-p;
-  padding: 1em;
-  @content; // permite agregar contenido al mixin en proximos llamados  @include test-mixin() { text-align: center;};
+	display: $l-h;
+	line-height: $fn-s;
+	font-size: $ds-p;
+	padding: 1em;
+	@content; // permite agregar contenido al mixin en proximos llamados  @include test-mixin() { text-align: center;};
 }
 .test-mixin{
-  @include test-mixin(
-    $l-h:1em,
-    $fn-s:12px,
-    $ds-p:block
-    ) { text-align: center;};
+	@include test-mixin(
+		$l-h:1em,
+		$fn-s:12px,
+		$ds-p:block
+		) { text-align: center;};
+}
+
+/* Mixin
+===================================================*/
+
+
+/* 1. Media Queries
+===================================================*/
+
+@mixin bp($point) {
+	@if $point == xs {
+		@media (max-width: 767px) { @content; }
+	}
+	@else if $point == sm {
+		@media (min-width: 768px) and (max-width: 1023px) { @content; }
+	}
+	@else if $point == md {
+		@media (min-width: 1024px)  { @content; }
+	}
+}
+
+/* 2. centrado
+===================================================*/
+$v: true;
+$f: false;
+@mixin center($horizontal: true, $vertical: true) {
+	position: absolute;
+	@if ($horizontal and $vertical) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	} @else if ($horizontal) {
+		left: 50%;
+		transform: translate(-50%, 0);
+	} @else if ($vertical) {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
 }
