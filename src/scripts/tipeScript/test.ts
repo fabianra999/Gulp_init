@@ -1,3 +1,4 @@
+// typeScript
 function sumaTest(numeroTest1:number, numeroTest2:number) : number {
 	return numeroTest1 + numeroTest2;
 }

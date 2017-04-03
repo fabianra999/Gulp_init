@@ -124,7 +124,17 @@ gulp.task('componentsJs', function(){
 		.pipe(browserSync.reload({stream:true}))
 });
 
-gulp.task('default', ['browser-sync'], function(){
+gulp.task('server', ['browser-sync'], function(){
+	gulp.watch("src/styles/**/*.scss", ['styles']);
+	gulp.watch("src/components/styles/**/*.scss", ['componentsCss']);
+	gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
+	gulp.watch("src/scripts/**/*.js", ['scripts']);
+	gulp.watch("src/components/js/**/*.js", ['componentsJs']);
+	gulp.watch("src/images/**/*", ['images']);
+	gulp.watch("*.html", ['bs-reload']);
+});
+
+gulp.task('default', function(){
 	gulp.watch("src/styles/**/*.scss", ['styles']);
 	gulp.watch("src/components/styles/**/*.scss", ['componentsCss']);
 	gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
