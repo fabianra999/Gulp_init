@@ -37,6 +37,7 @@ View.
 
 
 Nota.
-Los módulos descargados por el package.json son los últimos en los respectivos repositorios  ("string": "*",).
-Si se presentan problemas al instalar npm o correr gulp verificar si hay módulos en conflicto por versión (usualmente sass).
+En la raíz del proyecto hay un directorio llamado components en el cual se pueden almacenar librerías que no se deseen compiladas.
 Al descargar comentar en .gitignore el directorio dist.
+Los módulos descargados por el package.json son los últimos en los respectivos repositorios  ("string": "*",) y estan ignorados en .gitignore.
+Si se presentan problemas al instalar npm o correr gulp verificar si hay módulos en conflicto por versión (usualmente sass).
