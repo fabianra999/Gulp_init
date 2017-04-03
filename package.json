@@ -25,7 +25,7 @@
     "gulp-sourcemaps": "*"
   },
   "dependencies": {
-    "gulp-typescript": "^3.1.6",
-    "typescript": "^2.2.2"
+		"gulp-typescript": "*",
+		"typescript": "*"
   }
 }
