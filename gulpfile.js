@@ -1,12 +1,12 @@
 var gulp = require('gulp'),
-	plumber = require('gulp-plumber'),
-	rename = require('gulp-rename');
+		plumber = require('gulp-plumber'),
+		rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin'),
-	cache = require('gulp-cache');
+		cache = require('gulp-cache');
 var minifycss = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
@@ -120,7 +120,7 @@ gulp.task('componentsJs', function(){
 		.pipe(gulp.dest('dist/components/js/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
-		.pipe(gulp.dest('dist/scripts/js/'))
+		.pipe(gulp.dest('dist/components/js/'))
 		.pipe(browserSync.reload({stream:true}))
 });
 
@@ -133,6 +133,8 @@ gulp.task('server', ['browser-sync'], function(){
 	gulp.watch("src/images/**/*", ['images']);
 	gulp.watch("*.html", ['bs-reload']);
 });
+
+gulp.task('build', ['images', 'styles', 'componentsCss', 'tipeScript', 'scripts', 'componentsJs'], function(){ });
 
 gulp.task('default', function(){
 	gulp.watch("src/styles/**/*.scss", ['styles']);
