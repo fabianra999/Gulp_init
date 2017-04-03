@@ -12,6 +12,10 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 
+var gulp = require('gulp');
+var ts = require('gulp-typescript');
+
+
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
@@ -70,6 +74,17 @@ gulp.task('componentsCss', function(){
 		.pipe(browserSync.reload({stream:true}))
 });
 
+//typeScript
+gulp.task('tipeScript', function () {
+	return gulp.src('src/scripts/tipeScript/**/*.ts')
+		.pipe(ts({
+		noImplicitAny: true,
+		out: 'output.js'
+	}))
+		.pipe(gulp.dest('src/scripts'));
+});
+
+
 //scripts
 gulp.task('scripts', function(){
 	return gulp.src('src/scripts/**/*.js')
@@ -89,7 +104,7 @@ gulp.task('scripts', function(){
 
 //components Js
 gulp.task('componentsJs', function(){
-	return gulp.src('src/components/js**/*.js')
+	return gulp.src('src/components/js/**/*.js')
 		.pipe(plumber({
 		errorHandler: function (error) {
 			console.log(error.message);
@@ -107,6 +122,7 @@ gulp.task('componentsJs', function(){
 gulp.task('default', ['browser-sync'], function(){
 	gulp.watch("src/styles/**/*.scss", ['styles']);
 	gulp.watch("src/components/styles/**/*.scss", ['componentsCss']);
+	gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
 	gulp.watch("src/scripts/**/*.js", ['scripts']);
 	gulp.watch("src/components/js/**/*.js", ['componentsJs']);
 	gulp.watch("src/images/**/*", ['images']);

@@ -1,5 +1,5 @@
 {
-	"name": "noBrowser",
+  "name": "noBrowser",
   "version": "0.1.0",
   "description": "Quench",
   "main": "gulpfile.js",
@@ -23,5 +23,9 @@
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "gulp-sourcemaps": "*"
+  },
+  "dependencies": {
+    "gulp-typescript": "^3.1.6",
+    "typescript": "^2.2.2"
   }
 }
