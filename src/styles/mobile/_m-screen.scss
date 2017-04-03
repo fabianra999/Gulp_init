@@ -1,7 +1,36 @@
-// Import Components
-@import 'components/m-header';
-@import 'components/m-nav';
-@import 'components/m-footer';
+/*------MOBILE --------*/
+@media screen and (max-width: 768px) {
 
-// Import Layouts
-@import 'layouts/m-home';
+	// Import Components
+	@import 'components/m-header';
+	@import 'components/m-nav';
+	@import 'components/m-footer';
+
+	// Import Layouts
+	@import 'layouts/m-home';
+
+}
+
+
+/*mobile styles*/
+@media only screen and (max-width:480px) {
+	@import 'layouts/custom_movile/custom_mo-home';
+
+}
+
+
+/*tablet styles*/
+@media only screen and (min-width:481px) and (max-width:768px) {
+	@import 'layouts/custom_movile/custom_t-home';
+
+}
+
+
+/*desktop styles*/
+@media only screen and (min-width:769px) {
+	@import 'layouts/custom_movile/custom_d-home';
+}
+
+
+/*custom styles mediaQ*/
+@import 'layouts/custom_movile/custom_me-home';
