@@ -1,3 +1,6 @@
+//global
+@import 'base/normalize';
+
 // Import Base
 @import 'base/variables';
 @import 'base/placeholder';
@@ -5,8 +8,6 @@
 @import 'base/funciones';
 @import 'base/iteraciones';
 @import 'base/condicionales';
-
-@import 'base/normalize';
 @import 'base/global';
 
 // Import Components
@@ -19,8 +20,3 @@
 
 // Import Mobile
 @import 'mobile/m-screen';
-
-
-
-// Import Plugins
-// @import 'plugins/plugin';

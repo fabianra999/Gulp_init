@@ -49,7 +49,7 @@ gulp.task('styles', function(){
 		.pipe(gulp.dest('dist/styles/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
-		.pipe(sourcemaps.write('dist/styles/'))
+		.pipe(sourcemaps.write('/'))
 		.pipe(gulp.dest('dist/styles/'))
 		.pipe(browserSync.reload({stream:true}))
 });
@@ -66,11 +66,11 @@ gulp.task('componentsCss', function(){
 		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(autoprefixer('last 2 versions'))
-		.pipe(gulp.dest('dist/components/'))
+		.pipe(gulp.dest('dist/components/styles/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
-		.pipe(sourcemaps.write('dist/styles/'))
-		.pipe(gulp.dest('dist/components/'))
+		.pipe(sourcemaps.write('/'))
+		.pipe(gulp.dest('dist/components/styles/'))
 		.pipe(browserSync.reload({stream:true}))
 });
 
@@ -89,7 +89,6 @@ gulp.task('tipeScript', function () {
 		.pipe(gulp.dest('dist/scripts/tipeScript/'))
 		.pipe(browserSync.reload({stream:true}))
 });
-
 
 //scripts
 gulp.task('scripts', function(){
