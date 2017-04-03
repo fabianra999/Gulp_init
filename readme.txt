@@ -34,3 +34,9 @@ Instalación completa.
 View.
 *	index.php ya enlasa sus componentes primarios (head,  header, script) en el directorio (view/components).
 *	crear nuevas vistas en el directorio layout (view/layout).
+
+
+Nota.
+Los módulos descargados por el package.json son los últimos en los respectivos repositorios  ("string": "*",).
+Si se presentan problemas al instalar npm o correr gulp verificar si hay módulos en conflicto por versión (usualmente sass).
+Al descargar comentar en .gitignore el directorio dist.

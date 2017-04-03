@@ -1,19 +1,18 @@
 var gulp = require('gulp'),
 		plumber = require('gulp-plumber'),
-		rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin'),
-		cache = require('gulp-cache');
-var minifycss = require('gulp-minify-css');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
-var sourcemaps = require('gulp-sourcemaps');
-
-var gulp = require('gulp');
-var ts = require('gulp-typescript');
+		rename = require('gulp-rename'),
+		autoprefixer = require('gulp-autoprefixer'),
+		babel = require('gulp-babel'),
+		concat = require('gulp-concat'),
+		uglify = require('gulp-uglify'),
+		imagemin = require('gulp-imagemin'),
+		cache = require('gulp-cache'),
+		minifycss = require('gulp-minify-css'),
+		sass = require('gulp-sass'),
+		browserSync = require('browser-sync'),
+		sourcemaps = require('gulp-sourcemaps'),
+		gulp = require('gulp'),
+		ts = require('gulp-typescript');
 
 
 gulp.task('browser-sync', function() {
@@ -46,7 +45,7 @@ gulp.task('styles', function(){
 		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(autoprefixer({ browsers: ["> 0%"] }))
-	  //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
+	//.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
 		.pipe(gulp.dest('dist/styles/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
@@ -67,7 +66,7 @@ gulp.task('componentsCss', function(){
 		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(autoprefixer({ browsers: ["> 0%"] }))
-	  //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
+	//.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
 		.pipe(gulp.dest('dist/components/styles/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())

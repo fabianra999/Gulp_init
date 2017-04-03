@@ -14,23 +14,23 @@
 
 /*mobile styles*/
 @media only screen and (max-width:480px) {
-	@import 'layouts/custom_movile/custom_mo-home';
+	@import 'mobile/custom_movile/custom_mo-home';
 
 }
 
 
 /*tablet styles*/
 @media only screen and (min-width:481px) and (max-width:768px) {
-	@import 'layouts/custom_movile/custom_t-home';
+	@import 'mobile/custom_tablet/custom_t-home';
 
 }
 
 
 /*desktop styles*/
 @media only screen and (min-width:769px) {
-	@import 'layouts/custom_movile/custom_d-home';
+	@import 'mobile/custom_desktop/custom_d-home';
 }
 
 
 /*custom styles mediaQ*/
-@import 'layouts/custom_movile/custom_me-home';
+@import 'mobile/custom_medias/custom_me-home';
