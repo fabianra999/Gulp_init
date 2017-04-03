@@ -1,7 +1,7 @@
 <!-- Script -->
 
 <!--Components-->
-<script src="dist/components/components.js"></script>
+<script src="dist/components/js/components.js"></script>
 <!--javaScript-->
 <script src="dist/scripts/tipeScript/scriptJs.js"></script>
 <!--typeScript-->
