@@ -1,9 +1,9 @@
 Descripción.
 El proyecto sé vasa en las siguientes tecnologías:
-* Gulp	* sass	* javaScript	* TipeScript	* img	* components	* autoprefixer	* minify	* browser-sync	* reload
+* Gulp  * sass  * javaScript  * TipeScript  * img  * components  * autoprefixer  * minify  * browser-sync  * reload
 
 Componentes.
-*	html5shi v3.7.3	* respond v1.4.2	* normalize v3.0.3	* bootstrap v3.3.7	* jquery v1.12.4
+* html5shi v3.7.3  * respond v1.4.2  * normalize v3.0.3  * bootstrap v3.3.7  * jquery v1.12.4
 
 
 Init.  
