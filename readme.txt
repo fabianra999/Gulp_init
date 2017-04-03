@@ -2,6 +2,8 @@ Descripción.
 El proyecto sé vasa en las siguientes tecnologías:
 * Gulp  * sass  * javaScript  * TipeScript  * img  * components  * autoprefixer  * minify  * browser-sync  * reload
 
+Optimizado para móviles con scrips que proporcionan información del navegador y media querie en sass (src/styles/mobile/m-screen).
+
 Componentes.
 * html5shi v3.7.3  * respond v1.4.2  * normalize v3.0.3  * bootstrap v3.3.7  * jquery v1.12.4
 
