@@ -79,15 +79,21 @@ gulp.task('tipeScript', function () {
 	return gulp.src('src/scripts/tipeScript/**/*.ts')
 		.pipe(ts({
 		noImplicitAny: true,
-		out: 'output.js'
+		out: 'scriptTs.js'
 	}))
-		.pipe(gulp.dest('src/scripts'));
+		.pipe(concat('scriptTs.js'))
+		.pipe(babel())
+		.pipe(gulp.dest('dist/scripts/tipeScript/'))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/scripts/tipeScript/'))
+		.pipe(browserSync.reload({stream:true}))
 });
 
 
 //scripts
 gulp.task('scripts', function(){
-	return gulp.src('src/scripts/**/*.js')
+	return gulp.src('src/scripts/javaScript/**/*.js')
 		.pipe(plumber({
 		errorHandler: function (error) {
 			console.log(error.message);
@@ -95,10 +101,10 @@ gulp.task('scripts', function(){
 		}}))
 		.pipe(concat('main.js'))
 		.pipe(babel())
-		.pipe(gulp.dest('dist/scripts/'))
+		.pipe(gulp.dest('dist/scripts/javaScript/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
-		.pipe(gulp.dest('dist/scripts/'))
+		.pipe(gulp.dest('dist/scripts/javaScript/'))
 		.pipe(browserSync.reload({stream:true}))
 });
 
@@ -112,10 +118,10 @@ gulp.task('componentsJs', function(){
 		}}))
 		.pipe(concat('components.js'))
 		.pipe(babel())
-		.pipe(gulp.dest('dist/components/'))
+		.pipe(gulp.dest('dist/components/js/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
-		.pipe(gulp.dest('dist/scripts/'))
+		.pipe(gulp.dest('dist/scripts/js/'))
 		.pipe(browserSync.reload({stream:true}))
 });
 

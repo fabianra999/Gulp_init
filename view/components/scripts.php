@@ -1,3 +1,8 @@
-<!-- Singular -->
+<!-- Script -->
+
+<!--Components-->
 <script src="dist/components/components.js"></script>
-<script src="dist/scripts/main.min.js"></script>
+<!--javaScript-->
+<script src="dist/scripts/tipeScript/scriptJs.js"></script>
+<!--typeScript-->
+<script src="dist/scripts/tipeScript/scriptTs.js"></script>
