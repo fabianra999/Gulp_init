@@ -45,7 +45,8 @@ gulp.task('styles', function(){
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(autoprefixer('last 2 versions'))
+		.pipe(autoprefixer({ browsers: ["> 0%"] }))
+	  //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
 		.pipe(gulp.dest('dist/styles/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
@@ -65,7 +66,8 @@ gulp.task('componentsCss', function(){
 		.pipe(concat('componentsMain.css'))
 		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(autoprefixer('last 2 versions'))
+		.pipe(autoprefixer({ browsers: ["> 0%"] }))
+	  //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
 		.pipe(gulp.dest('dist/components/styles/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
@@ -124,6 +126,8 @@ gulp.task('componentsJs', function(){
 		.pipe(browserSync.reload({stream:true}))
 });
 
+
+//funciones
 gulp.task('server', ['browser-sync'], function(){
 	gulp.watch("src/styles/**/*.scss", ['styles']);
 	gulp.watch("src/components/styles/**/*.scss", ['componentsCss']);
