@@ -125,6 +125,8 @@ gulp.task('componentsJs', function(){
 		.pipe(browserSync.reload({stream:true}))
 });
 
+//limpiar dis
+gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 //funciones
 gulp.task('server', ['browser-sync'], function(){

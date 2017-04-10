@@ -1,0 +1,26 @@
+{
+    "name": "web",
+    "description": "web project",
+    "main": "view/components/head.php",
+    "directory": "app/components/",
+    "authors": [
+        "yeaa"
+    ],
+    "license": "MIT",
+    "moduleType": [
+        "es6",
+        "globals",
+        "node"
+    ],
+    "dependencies": {
+        "chai": "~3.4.2",
+        "bootstrap": "~3.3.6",
+        "jquery": "~2.2.0",
+        "mocha": "~2.3.4",
+        "font-awesome": "~4.5.0",
+        "respond": "respondJS#~1.4.2",
+        "modernizr": "~3.2.0",
+        "html5shiv": "~3.7.3"
+    }
+
+}
