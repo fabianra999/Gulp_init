@@ -1,0 +1,27 @@
+// center col
+.row-center{
+	display: table;
+	height: 100%;
+	> div{
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+	}
+}
+
+/* scroll horizontal
+.container-horizontal preferible poner en .row &&  .col-horizontal en la col col-xs-6.
+mayor problema por fload superior.
+*/
+.container-horizontal{
+	display: block;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space:nowrap;
+	.col-horizontal{
+		cursor: pointer;
+		display: inline-block;
+		vertical-align: top;
+		float: inherit;
+	}
+}
