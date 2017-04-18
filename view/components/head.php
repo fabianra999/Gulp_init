@@ -9,6 +9,12 @@
 	<link rel="stylesheet" href="dist/styles/screen.min.css">
 	<!-- components -->
 
+	<!-- bower:css -->
+	<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="../../bower_components/slick-carousel/slick/slick.css" />
+	<link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.css" />
+	<!-- endbower -->
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>

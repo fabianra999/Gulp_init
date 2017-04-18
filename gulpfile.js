@@ -1,18 +1,22 @@
 var gulp = require('gulp'),
-		plumber = require('gulp-plumber'),
-		rename = require('gulp-rename'),
-		autoprefixer = require('gulp-autoprefixer'),
-		babel = require('gulp-babel'),
-		concat = require('gulp-concat'),
-		uglify = require('gulp-uglify'),
-		imagemin = require('gulp-imagemin'),
-		cache = require('gulp-cache'),
-		minifycss = require('gulp-minify-css'),
-		sass = require('gulp-sass'),
-		browserSync = require('browser-sync'),
-		sourcemaps = require('gulp-sourcemaps'),
-		gulp = require('gulp'),
-		ts = require('gulp-typescript');
+	plumber = require('gulp-plumber'),
+	rename = require('gulp-rename'),
+	autoprefixer = require('gulp-autoprefixer'),
+	babel = require('gulp-babel'),
+	concat = require('gulp-concat'),
+	uglify = require('gulp-uglify'),
+	imagemin = require('gulp-imagemin'),
+	cache = require('gulp-cache'),
+	minifycss = require('gulp-minify-css'),
+	sass = require('gulp-sass'),
+	browserSync = require('browser-sync'),
+	sourcemaps = require('gulp-sourcemaps'),
+	gulp = require('gulp'),
+	ts = require('gulp-typescript'),
+	flatten = require('gulp-flatten'),
+	gulpFilter = require('gulp-filter'),
+	mainBowerFiles = require('main-bower-files'),
+	wiredep = require('wiredep').stream;
 
 
 gulp.task('browser-sync', function() {
@@ -67,7 +71,6 @@ gulp.task('componentsCss', function(){
 		.pipe(sass())
 		.pipe(autoprefixer({ browsers: ["> 0%"] }))
 	//.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
-		.pipe(gulp.dest('dist/components/styles/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
 		.pipe(sourcemaps.write('/'))
@@ -126,7 +129,7 @@ gulp.task('componentsJs', function(){
 });
 
 //limpiar dis
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+//gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 //funciones
 gulp.task('server', ['browser-sync'], function(){
@@ -139,8 +142,58 @@ gulp.task('server', ['browser-sync'], function(){
 	gulp.watch("*.html", ['bs-reload']);
 });
 
+//build
 gulp.task('build', ['images', 'styles', 'componentsCss', 'tipeScript', 'scripts', 'componentsJs'], function(){ });
 
+// bower
+// Define paths variables
+var dest_path =  'www';
+gulp.task('bower2', function() {
+	var jsFilter = gulpFilter('***/**/*.js', {restore: true}),
+		cssFilter = gulpFilter('*****/****/***/**/*.css', {restore: true}),
+		fontFilter = gulpFilter(['fonts/**/*.eot', 'fonts/**/*.woff', 'fonts/**/*.svg', 'fonts/**/*.ttf'], {restore: true});
+
+	return gulp.src(mainBowerFiles())
+
+	// grab vendor js files from bower_components, minify and push in /public
+		.pipe(jsFilter)
+		.pipe(gulp.dest(dest_path + '/js/'))
+		.pipe(uglify())
+		.pipe(rename({suffix: ".min"}))
+		.pipe(gulp.dest(dest_path +'/js/'))
+		.pipe(jsFilter.restore)
+
+	// grab vendor css files from bower_components, minify and push in /public
+		.pipe(cssFilter)
+		.pipe(gulp.dest(dest_path + '/css'))
+		.pipe(minifycss())
+		.pipe(rename({suffix: ".min"}))
+		.pipe(gulp.dest(dest_path + '/css'))
+		.pipe(cssFilter.restore)
+
+	// grab vendor font files from bower_components and push in /public
+		.pipe(fontFilter)
+		.pipe(flatten())
+		.pipe(gulp.dest(dest_path + '/fonts'));
+});
+gulp.task('bowerCss', function () {
+	gulp.src('./view/components/head.php')
+		.pipe(wiredep({
+			optional: 'configuration',
+			goes: 'here'
+		}))
+		.pipe(gulp.dest('./view/components/'));
+});
+gulp.task('bowerjs', function () {
+	gulp.src('./view/components/scripts.php')
+		.pipe(wiredep({
+			optional: 'configuration',
+			goes: 'here'
+		}))
+		.pipe(gulp.dest('./view/components/'));
+});
+gulp.task('bower', ['bowerjs', 'bowerCss'], function(){ });
+// Defaul
 gulp.task('default', function(){
 	gulp.watch("src/styles/**/*.scss", ['styles']);
 	gulp.watch("src/components/styles/**/*.scss", ['componentsCss']);
