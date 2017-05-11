@@ -134,14 +134,13 @@ function viewportSize () {
 
 /* llamados
 ==============================================================================*/
-$( window ).resize(function() {
-	// console.log('hola resize');
+/*$( window ).resize(function() {
 	detectBrowser () ;
 	mobileDetecting () ;
 	viewportSize () ;
-});
+});*/
 
-(function  () {
+/*(function  () {
 	detectBrowser () ;
 	mobileDetecting () ;
 	viewportSize () ;
@@ -150,4 +149,4 @@ $( window ).resize(function() {
 
 	}
 
-})();
+})();*/
