@@ -29,8 +29,15 @@ Instalación completa.
 	-	Uso gloval ($ npm install --save gulp-install )
 	-	Uso local ($ npm install --save-dev gulp-install )
 
-
-
+Instalación Bower.
+1.	Instalar bower ($ bower i).
+2.  Buscar bower componentes ($ bower search parallax) parallax o nueva libreria.
+3.  Instalar componentes bower ($ bower i --save https://github.com/wagerfield/parallax.git) don --save guarda la libreria en bower.json mas la rideccion.
+4.	Gulp Bower.
+	-	($ gulp bowerCss) ($ gulp bowerjs) Y ($ gulp bower). procesa librerias y conecta con template.
+	-	($ gulp bower-cr) y ($ gulp bowerJs-cr).  procesa archivos y exporta a dist/components.
+		*	Recomiendo ($ gulp bowerJs-cr) incertar en template y llamar las librerias css y sass src/components/styles/bower.scss y procesar con ($ gulp build).
+		
 View.
 *	index.php ya enlasa sus componentes primarios (head,  header, script) en el directorio (view/components).
 *	crear nuevas vistas en el directorio layout (view/layout).

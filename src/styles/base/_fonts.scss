@@ -1,0 +1,48 @@
+/* Fonts Bebas*/
+@font-face {
+	font-family:'BebasNeue';
+	src: url('#{$path-fonts}BebasNeue.eot');
+	src: url('#{$path-fonts}BebasNeue.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}BebasNeue.woff2') format('woff2'),
+		url('#{$path-fonts}BebasNeue.woff') format('woff'),
+		url('#{$path-fonts}BebasNeue.ttf') format('truetype'),
+		url('#{$path-fonts}BebasNeue.otf') format('opentype'),
+		url('#{$path-fonts}BebasNeue.svg#BebasNeue') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-00FE;
+}
+
+
+/* Fonts Stencil*/
+@font-face {
+	font-family:'Stencil';
+	src: url('#{$path-fonts}StencilStd.eot');
+	src: url('#{$path-fonts}StencilStd.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}StencilStd.woff2') format('woff2'),
+		url('#{$path-fonts}StencilStd.woff') format('woff'),
+		url('#{$path-fonts}StencilStd.ttf') format('truetype'),
+		url('#{$path-fonts}StencilStd.otf') format('opentype'),
+		url('#{$path-fonts}StencilStd.svg#StencilStd') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-00FE;
+}
+
+/* Fonts Intro*/
+@font-face {
+	font-family:'Intro';
+	src: url('#{$path-fonts}Intro.eot');
+	src: url('#{$path-fonts}Intro.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}Intro.woff2') format('woff2'),
+		url('#{$path-fonts}Intro.woff') format('woff'),
+		url('#{$path-fonts}Intro.ttf') format('truetype'),
+		url('#{$path-fonts}Intro.otf') format('opentype'),
+		url('#{$path-fonts}Intro.svg#Intro') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-00FE;
+}

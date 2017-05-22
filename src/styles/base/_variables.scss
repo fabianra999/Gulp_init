@@ -15,7 +15,7 @@
 // }
 
 
-/* Varables
+/* Varables Colores
 ===================================================*/
 
 //colores
@@ -32,3 +32,13 @@ $whatsapp:   #65a445;
 $facebook:   #253a81;
 $instagram:  #38619f;
 $mail:       #2e8b9b;
+
+
+/* Path Sass
+===================================================*/
+$path-fonts: '../../components/fonts/';
+$path-img: '../images/png';
+
+/*=== font-awesome ===*/
+// Impotar css min
+//$fa-font-path:        "../fonts" !default;  

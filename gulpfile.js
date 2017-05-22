@@ -146,12 +146,13 @@ gulp.task('server', ['browser-sync'], function(){
 gulp.task('build', ['images', 'styles', 'componentsCss', 'tipeScript', 'scripts', 'componentsJs'], function(){ });
 
 // bower
-// Define paths variables
-var dest_path =  'www';
-gulp.task('bower2', function() {
+
+// Crea directorios con los componentes Bower
+var dest_path =  'www';// Define paths variables
+gulp.task('bower-cr', function() {
 	var jsFilter = gulpFilter('***/**/*.js', {restore: true}),
 		cssFilter = gulpFilter('*****/****/***/**/*.css', {restore: true}),
-		fontFilter = gulpFilter(['fonts/**/*.eot', 'fonts/**/*.woff', 'fonts/**/*.svg', 'fonts/**/*.ttf'], {restore: true});
+		fontFilter = gulpFilter(['***/**/*.eot', '***/**/*.woff', '***/**/*.svg', '***/**/*.ttf'], {restore: true});
 
 	return gulp.src(mainBowerFiles())
 
@@ -176,23 +177,43 @@ gulp.task('bower2', function() {
 		.pipe(flatten())
 		.pipe(gulp.dest(dest_path + '/fonts'));
 });
+gulp.task('bowerJs-cr', function() {
+	
+	var dest_path = 'dist/components';// Define paths variables
+	var jsFilter = gulpFilter('***/**/*.js', {restore: true});
+
+	return gulp.src(mainBowerFiles())
+
+	// grab vendor js files from bower_components, minify and push in /public
+		.pipe(jsFilter)
+		//.pipe(gulp.dest(dest_path + '/js/'))
+		//.pipe(uglify())
+		.pipe(rename({suffix: ".min"}))
+		.pipe(uglify())
+		.pipe(gulp.dest(dest_path +'/js/'))
+		.pipe(jsFilter.restore)
+
+});
+
+//inserta componentes Bower en markup
 gulp.task('bowerCss', function () {
 	gulp.src('./view/components/head.php')
 		.pipe(wiredep({
-			optional: 'configuration',
-			goes: 'here'
-		}))
+		optional: 'configuration',
+		goes: 'here'
+	}))
 		.pipe(gulp.dest('./view/components/'));
 });
 gulp.task('bowerjs', function () {
 	gulp.src('./view/components/scripts.php')
 		.pipe(wiredep({
-			optional: 'configuration',
-			goes: 'here'
-		}))
+		optional: 'configuration',
+		goes: 'here'
+	}))
 		.pipe(gulp.dest('./view/components/'));
 });
 gulp.task('bower', ['bowerjs', 'bowerCss'], function(){ });
+
 // Defaul
 gulp.task('default', function(){
 	gulp.watch("src/styles/**/*.scss", ['styles']);
@@ -200,6 +221,6 @@ gulp.task('default', function(){
 	gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
 	gulp.watch("src/scripts/**/*.js", ['scripts']);
 	gulp.watch("src/components/js/**/*.js", ['componentsJs']);
-	gulp.watch("src/images/**/*", ['images']);
+	gulp.watch("src/images/***/**/*", ['images']);
 	gulp.watch("*.html", ['bs-reload']);
 });
