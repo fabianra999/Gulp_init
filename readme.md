@@ -1,4 +1,4 @@
-Descripción.
+<h1>Descripción.</h1>
 El proyecto sé vasa en las siguientes tecnologías:
 * Gulp  * sass  * javaScript  * TipeScript  * img  * components  * autoprefixer  * minify  * browser-sync  * reload
 
