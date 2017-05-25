@@ -1,4 +1,4 @@
-// Import Base
+/****** Base ******/
 @import 'base/variables';
 @import 'base/placeholder';
 @import 'base/mixin';
@@ -8,22 +8,24 @@
 @import 'base/global';
 @import 'base/customBootstrap';
 
-// Import Components
-@import 'components/header';
-@import 'components/nav';
-@import 'components/footer';
 
-// Import Layouts
+/****** Modules ******/
+@import 'modules/header';
+@import 'modules/nav';
+@import 'modules/footer';
+
+
+/****** Theme ******/
+//@import 'theme/';
+
+
+/****** Layouts ******/
 @import 'layouts/home';
 
-// Import Mobile
+
+/****** State ******/
+//@import 'state/';
+
+
+/****** Mobile ******/
 @import 'mobile/m-screen';
-
-
-
-/*=== Web Code ===*/
-// Input hover =  http://codepen.io/MichaelArestad/pen/ohLIa
-// Button hover = http://codepen.io/kjbrum/pen/wBBLXx
-// selectors =    https://code.tutsplus.com/es/tutorials/the-30-css-selectors-you-must-memorize--net-16048
-// gradient =     http://www.cssmatic.com/es/gradient-generator#'\
-// Font =         https://transfonter.org/
