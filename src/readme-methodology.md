@@ -88,7 +88,8 @@ Sintaxis BEM
 ------------------------------------------------------------- 
     Nota
     - Las definicion de clases debe ser en ingles.
-    - La sintaxis para generica es camelcase. (.navBar)
+    - La sintaxis para generica es camelcase. (.navBar).
+    - los subniveles no devén exceder 4 niveles (.niv-1__.niv-2__.niv-3__.niv-4--.nivNuevo).
 ------------------------------------------------------------- 
 
 
