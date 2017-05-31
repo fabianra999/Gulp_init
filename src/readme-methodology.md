@@ -1,3 +1,30 @@
+
+Responsive design.
+    - Grid flexible.
+    - Multimedia Flexible.
+    - Uso mediaqueries
+
+    Enfoque Maquetacion.
+        - Movile First - Progressive Enhancement.
+        - Desktop First - Graceful Degration.
+_______________________________________________________________________
+
+Responsible Responsive desing.
+    Buenas practicas de Css JS ServerSide.
+        - Adaptive Desing.
+        - RESS.
+        - Responsible Desing.
+_______________________________________________________________________
+
+Formula css.
+    - Posicionamiento: position, Z-index, fload, display Etc.
+    - Modelo de caja: width, height, padding, margin Etc.
+    - Texto: font Etc.
+    - varios: backgrounds, opacity, Etc.
+
+https://github.com/jonmircha/buenas-practicas-frontend
+
+
 Organizacion SMACSS
     Sclable and Modular Architecture for CSS.
 
