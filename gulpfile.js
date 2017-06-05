@@ -132,7 +132,9 @@ gulp.task('tipeScript', function () {
 		out: 'scriptTs.js'
 	}))
 		.pipe(concat('scriptTs.js'))
-		.pipe(babel())
+		.pipe(babel({
+            presets: ['es2015']
+         }))
 		.pipe(gulp.dest('dist/scripts/tipeScript/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
@@ -159,7 +161,9 @@ gulp.task('scripts', function(){
 			this.emit('end');
 		}}))
 		.pipe(concat('main.js'))
-		.pipe(babel())
+		.pipe(babel({
+            presets: ['es2015']
+        }))
 		.pipe(gulp.dest('dist/scripts/javaScript/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
@@ -187,7 +191,9 @@ gulp.task('componentsJs', function(){
 			this.emit('end');
 		}}))
 		.pipe(concat('mix.js'))
-		.pipe(babel())
+		.pipe(babel({
+            presets: ['es2015']
+        }))
 		.pipe(gulp.dest('dist/mix/js/'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
