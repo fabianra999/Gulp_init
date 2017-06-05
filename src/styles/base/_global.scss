@@ -1,8 +1,17 @@
 // Global CSS goes here
 
 /*====== body ======*/
-body{
-/* Scroll css
+*, 
+*::after,
+*::before{
+	box-sizing: inherit;
+}
+html{
+	/* box model
+============================================================*/
+	box-sizing: border-box;
+
+	/* Scroll css
 ============================================================*/
 scrollbar {
 	width: 8px;
@@ -96,6 +105,9 @@ scrollbar-corner {
 ::-webkit-scrollbar-corner {
 
 }
+}
+body{
+
 }
 
 /*====== font color ======*/

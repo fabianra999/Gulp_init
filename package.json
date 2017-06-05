@@ -9,10 +9,11 @@
   "author": "*",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "browser-sync": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-babel": "*",
+    "gulp-babel": "^6.1.2",
     "gulp-cache": "*",
     "gulp-concat": "*",
     "gulp-filter": "^5.0.0",
