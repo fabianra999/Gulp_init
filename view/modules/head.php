@@ -1,8 +1,17 @@
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title> *** </title>
+	<title>Starter Template for Bootstrap 3.3.7</title>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="components/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="components/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="components/favicon/favicon-16x16.png">
+	<link rel="manifest" href="components/favicon/manifest.json">
+	<link rel="mask-icon" href="components/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
 
 	<!-- styles -->
 	<link rel="stylesheet" href="dist/components/styles/componentsMain.min.css">
