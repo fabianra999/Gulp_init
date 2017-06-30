@@ -44,6 +44,9 @@ Instalación Bower.
 	-	Js Imporatar libredias desde bower_components.
 
 
+Instalacion modulo npm para Gulp
+ - npm install gulp-clean --save npm install gulp-clean --save
+
 View.
 *	index.php ya enlasa sus componentes primarios (head,  header, script) en el directorio (view/components).
 *	crear nuevas vistas en el directorio layout (view/layout).

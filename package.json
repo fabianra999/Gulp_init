@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "gulp-bower-files": "^0.2.7",
+    "gulp-clean": "^0.3.2",
     "gulp-filter": "^5.0.0",
     "gulp-flatten": "^0.3.1",
     "gulp-typescript": "*",

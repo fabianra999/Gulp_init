@@ -172,3 +172,101 @@ string
 
             -extraer porcion del strin usando dos valores 
                 .substring(a,b); - .substr(a,b); - .slice(a,b)
+    
+
+
+Condicionales
+    if () {
+
+    } else if {
+
+    } else {
+
+    }
+
+    truthy y falsy values 
+        son valores no boolean q se comportan como boolean 0 = false 1 = true
+
+        truthy
+            string no vacios, [], {} Numeros diferentes a cero
+        falsy
+         string vacios, cero, undefined, null, NaN
+
+
+
+operador ternario
+    es una forma mas compacta de if
+    condicion ? valorTrue : valorFalse
+    let nombre = prompt('Tu nombre es:');
+     nombre.length > 5 console.log('nombre largo') : console.log('nombre corto') 
+
+switch
+    Compara un valor con diferentes valores posibles.
+
+    switch (key){
+        case value:
+
+        break;
+        case value:
+        
+        break;
+        break;
+        
+        default:
+    }
+
+loops o siclos
+    son siclos para repetir muchas vesec una tarea 
+
+    For
+        for (let i = 0; i <= 0; i+=2){
+            console.log(i);
+        }
+
+        break : salir del siclo;
+        continue: saltarse una iteracion;
+
+        Ejp: 
+        * buscar en array nombres q comiencen con a
+            let nombre =['tomas', 'nico', 'Albaro', 'alverto'];
+
+            for(let i = 0; i < nombres; i++){
+                if(nombres[i].toUpperCase().indexOf('A') == 0){
+                    console.log(nombres[i]);
+                }
+            }
+        * sacar nombres q comiensan po a 
+            for(let i = 0; i < nombres; i++){
+                    if(nombres[i].toUpperCase().indexOf('A') == 0){
+                        continue;
+                    }
+                        console.log(nombres[i]);
+                }
+            * salir de siclo cuando encuentre primer nombre por a
+                for(let i = 0; i < nombres; i++){
+                        if(nombres[i].toUpperCase().indexOf('A') == 0){
+                            break;
+                        }
+                            console.log(nombres[i]);
+                    }
+
+        
+    while
+
+    Do while
+
+        let clave = 'holaMundo';
+        let pideClave;
+        do{
+            pideClave = prompt('poner clave');
+        }while(pas != clave)
+
+    for Of (es6)
+    * recorre el Objeto array, strin,
+    let nombres =['tomas', 'nico', 'Albaro', 'alverto'];
+        for(let nombre of nombres){
+            console.log(nombre);
+        }
+
+
+MODULO 3
