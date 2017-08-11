@@ -1,12 +1,56 @@
 'use strict';
 
-/*------- mobile styles --------*/
-if (window.matchMedia("(max-width: 480px)").matches) {
-} 
+/**
+* mediaQueryJs
+* - Tamaño mediasQuery´s de bootstrap 4.
+* - function resize and onload.
+* - Funcion auto ejecutable.
+**/
 
-/*------- Tablet styles --------*/
-if (window.matchMedia("screen and (min-width: 481px) and (max-width: 768px)").matches){
-} 
-/*------- Desktop styles --------*/
-if (window.matchMedia("(min-width: 769px)").matches){
-} 
+(function mediaQueryJs () {
+
+  // mediaQuery -> Tamaños
+  const mediaQuery = [
+    matchMedia('(max-width: 576px)'),
+    matchMedia('(min-width: 577px) and (max-width: 768px)'),
+    matchMedia('(min-width: 769px) and (max-width: 992px)'),
+    matchMedia('(min-width: 993px)'),
+  ];
+
+
+  // Dondicional por mediaQuery
+  const changeSize = function (){
+    if (mediaQuery[0].matches){
+      //console.log('1 sm');
+      //document.body.style.background = 'red'
+
+    }
+    if (mediaQuery[1].matches) {
+      //console.log('2 md');
+      //document.body.style.background = 'blue'
+
+    }
+    if (mediaQuery[2].matches) {
+      //console.log('3 lg');
+      //document.body.style.background = 'tomato'
+
+    }
+    if (mediaQuery[3].matches) {
+      //console.log('4 xl');
+      //document.body.style.background = 'green'
+
+    }
+  }
+
+  let key_1 = 0;
+  for (let mediaQuerys of mediaQuery) {
+    //console.log(key_1);
+    //console.log(mediaQuerys);
+    // console.log('q es:', mediaQuery[0].matches);
+
+    mediaQuery[key_1].addListener(changeSize);
+    changeSize(mediaQuery[key_1]);
+
+    key_1++;
+  }
+})();

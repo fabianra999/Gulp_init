@@ -74,7 +74,8 @@ gulp.task('styles', function(){
                 this.emit('end');
             }}))
         .pipe(sourcemaps.init())
-        .pipe(sass())
+		.pipe(sass())
+        //.pipe(rename('nose.css')) //renombra archivo css
         .pipe(autoprefixer({ browsers: ["> 0%"] }))
         //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
         .pipe(gulp.dest('dist/styles/'))
@@ -162,7 +163,7 @@ gulp.task('scripts', function(){
                 console.log(error.message);
                 this.emit('end');
             }}))
-        .pipe(concat('main.js'))
+		.pipe(concat('scriptJs.js'))
         .pipe(babel({
             presets: ['es2015']
         }))
