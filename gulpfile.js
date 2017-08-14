@@ -25,7 +25,7 @@ var gulp = require('gulp'),
  - Levanta servidor local.
  - Tarea $ gulp browser-sync.
  ******************************************/
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
     browserSync({
         server: {
             baseDir: "./"
@@ -38,7 +38,7 @@ gulp.task('browser-sync', function() {
  - Refresca el navegador automaticamente al ver cambios.
  - Tarea $ gulp bs-reload.
  ******************************************/
-gulp.task('bs-reload', function () {
+gulp.task('bs-reload', () => {
     browserSync.reload();
 });
 
@@ -50,7 +50,7 @@ gulp.task('bs-reload', function () {
  - Directorio a precesar src/images.
  - Directorio procesado dist/images.
  ******************************************/
-gulp.task('images', function(){
+gulp.task('images', () => {
     gulp.src('src/images/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 9, progressive: true, interlaced: true })))
         .pipe(gulp.dest('dist/images/'))
@@ -66,7 +66,7 @@ gulp.task('images', function(){
  - Archivo comprimido.
  - Mapa Archivo SCSS.
  ******************************************/
-gulp.task('styles', function(){
+gulp.task('styles', () => {
     gulp.src(['src/styles/**/*.scss'])
         .pipe(plumber({
             errorHandler: function (error) {
@@ -98,7 +98,7 @@ gulp.task('styles', function(){
  - Archivo comprimido.
  - Mapa Archivo SCSS.
  ******************************************/
-gulp.task('mixCss', function(){
+gulp.task('mixCss', () => {
     gulp.src(['src/mix/styles/**/*.scss'])
         .pipe(plumber({
             errorHandler: function (error) {
@@ -128,7 +128,7 @@ gulp.task('mixCss', function(){
  - Archivo a procesado dist/scripts/tipeScript/*.js.
  - Mapa Archivo js.
  ******************************************/
-gulp.task('tipeScript', function () {
+gulp.task('tipeScript', () => {
     return gulp.src('src/scripts/tipeScript/**/*.ts')
         .pipe(ts({
             noImplicitAny: true,
@@ -156,7 +156,7 @@ gulp.task('tipeScript', function () {
  - Archivo a procesado dist/scripts/javaScript/*.js.
  - Mapa Archivo js.
  ******************************************/
-gulp.task('scripts', function(){
+gulp.task('scripts', () => {
     return gulp.src('src/scripts/javaScript/**/*.js')
         .pipe(plumber({
             errorHandler: function (error) {
@@ -186,7 +186,7 @@ gulp.task('scripts', function(){
  - Archivo a procesado dist/mix/js/*.js.
  - Mapa Archivo js.
  ******************************************/
-gulp.task('componentsJs', function(){
+gulp.task('componentsJs', () => {
     return gulp.src('src/mix/js/**/*.js')
         .pipe(plumber({
             errorHandler: function (error) {
@@ -211,7 +211,7 @@ gulp.task('componentsJs', function(){
  - Levanta servidor local.
  - Queda atento a cambios de todas las tareas.
  ******************************************/
-gulp.task('server', ['browser-sync'], function(){
+gulp.task('server', ['browser-sync'], () => {
     gulp.watch("src/styles/**/*.scss", ['styles']);
     gulp.watch("src/components/styles/**/*.scss", ['mixCss']);
     gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
@@ -226,17 +226,17 @@ gulp.task('server', ['browser-sync'], function(){
  - Eliminar todo directorio y archivo de dist/
  - Tarea $ gulp clean.
  ******************************************/
-gulp.task('clean', ['clean-img', 'clean-js', 'clean-css'], function(){ });
+gulp.task('clean', ['clean-img', 'clean-js', 'clean-css'], () => { });
 
-gulp.task('clean-img', function () {
+gulp.task('clean-img', () => {
     return gulp.src('dist/images/**/', {read: false})
         .pipe(clean());
 });
-gulp.task('clean-js', function () {
+gulp.task('clean-js', () => {
     return gulp.src('dist/scripts/**/*.js', {read: false})
         .pipe(clean());
 });
-gulp.task('clean-css', function () {
+gulp.task('clean-css', () => {
     return gulp.src('dist/styles/**/*.css', {read: false})
         .pipe(clean());
 });
@@ -247,7 +247,7 @@ gulp.task('clean-css', function () {
  - Reconstruir los archivos generados por las tareas.
  - Tarea $ gulp build.
  *****************************************/
-gulp.task('build', ['clean', 'images', 'styles', 'mixCss', 'tipeScript', 'scripts', 'componentsJs'], function(){ });
+gulp.task('build', ['clean', 'images', 'styles', 'mixCss', 'tipeScript', 'scripts', 'componentsJs'], () => { });
 
 
 
@@ -261,9 +261,9 @@ gulp.task('build', ['clean', 'images', 'styles', 'mixCss', 'tipeScript', 'script
  - Tarea $ gulp bower-cr.
  - Tarea por Ajustar.
  ******************************************/
-var dest_path =  'www';// Define paths variables
-gulp.task('bower-cr', function() {
-    var jsFilter = gulpFilter('***/**/*.js', {restore: true}),
+let dest_path =  'www';// Define paths variables
+gulp.task('bower-cr', () => {
+    let jsFilter = gulpFilter('***/**/*.js', {restore: true}),
         cssFilter = gulpFilter('*****/****/***/**/*.css', {restore: true}),
         fontFilter = gulpFilter(['***/**/*.eot', '***/**/*.woff', '***/**/*.svg', '***/**/*.ttf'], {restore: true});
 
@@ -297,10 +297,10 @@ gulp.task('bower-cr', function() {
  - Tarea $ gulp bower-cr.
  - Tarea por Ajustar.
  ******************************************/
-gulp.task('bowerJs-cr', function() {
+gulp.task('bowerJs-cr', () => {
 
-    var dest_path = 'dist/components';// Define paths variables
-    var jsFilter = gulpFilter('***/**/*.js', {restore: true});
+    let dest_path = 'dist/components';// Define paths variables
+    let jsFilter = gulpFilter('***/**/*.js', {restore: true});
 
     return gulp.src(mainBowerFiles())
 
@@ -320,7 +320,7 @@ gulp.task('bowerJs-cr', function() {
  - Busca: css para indexar a html-php por medio de etiquetas inteligentes.
  - Tarea $ gulp bowerCss.
  ******************************************/
-gulp.task('bowerCss', function () {
+gulp.task('bowerCss', () => {
     gulp.src('./view/components/head.php')
         .pipe(wiredep({
             optional: 'configuration',
@@ -334,7 +334,7 @@ gulp.task('bowerCss', function () {
  - Busca: Js para indexar a html-php por medio de etiquetas inteligentes.
  - Tarea $ gulp bowerjs.
  ******************************************/
-gulp.task('bowerjs', function () {
+gulp.task('bowerjs', () => {
     gulp.src('./view/components/scripts.php')
         .pipe(wiredep({
             optional: 'configuration',
@@ -348,7 +348,7 @@ gulp.task('bowerjs', function () {
  - Ejecuta las tareas: bowerjs, bowerCss.
  - Tarea $ gulp bowerIndexes.
  ******************************************/
-gulp.task('bowerIndexes', ['bowerjs', 'bowerCss'], function(){ });
+gulp.task('bowerIndexes', ['bowerjs', 'bowerCss'], () => { });
 
 /*****************************************
  Defaul Tarea
@@ -356,7 +356,7 @@ gulp.task('bowerIndexes', ['bowerjs', 'bowerCss'], function(){ });
  - Tarea $ gulp.
  - Queda atento a cambios de todas las tareas.
  ******************************************/
-gulp.task('default', function(){
+gulp.task('default', () => {
     gulp.watch("src/styles/**/*.scss", ['styles']);
     gulp.watch("src/components/styles/**/*.scss", ['mixCss']);
     gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);

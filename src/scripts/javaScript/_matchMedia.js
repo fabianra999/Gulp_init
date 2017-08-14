@@ -7,7 +7,7 @@
 * - Funcion auto ejecutable.
 **/
 
-(function mediaQueryJs () {
+( mediaQueryJs => {
 
   // mediaQuery -> Tamaños
   const mediaQuery = [
