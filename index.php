@@ -3,6 +3,9 @@
 	<!--head-->
 	<?php include 'view/modules/head.php';?>
 	<body>
+      <input type="text" id="add-task" placeholder="tarea">
+      <ul id="tasks-container">
+      </ul>
 
 		<!--header-->
 		<?php include 'view/modules/header.php';?>
