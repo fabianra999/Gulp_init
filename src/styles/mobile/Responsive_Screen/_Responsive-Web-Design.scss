@@ -1,0 +1,30 @@
+/**
+*  Grid options Bootstrap 4
+*   --> Responsive Web Design <--
+*        (Desktop to Mobile)
+*     -> Extra small <576px = .col-
+*     -> Small ≥576px = .col-sm-
+*     -> Medium ≥768px = .col-md-
+*     -> Large ≥992px = .col-lg-
+*     -> Extra large ≥1200px = .col-xl-
+*/
+
+// Extra small
+@media only screen and (max-width: 576px) {
+}
+
+// Small
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+}
+
+// Medium
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+}
+
+// Large
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
+}
+
+// Extra large
+@media only screen and (min-width: 993px) {
+}
