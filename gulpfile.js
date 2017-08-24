@@ -87,7 +87,7 @@ gulp.task('styles', () => {
 });
 
 /*****************************************
- Mix styles
+ libs styles
  - procesa archivos SASS.
  - Tarea $ gulp mixCss.
  - Importa archivos bower css - scss.
@@ -99,13 +99,13 @@ gulp.task('styles', () => {
  - Mapa Archivo SCSS.
  ******************************************/
 gulp.task('mixCss', () => {
-    gulp.src(['src/mix/styles/**/*.scss'])
+  gulp.src(['src/libs/styles/**/*.scss'])
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
                 this.emit('end');
             }}))
-        .pipe(concat('mixMain.css'))
+      .pipe(concat('libsMain.css'))
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({ browsers: ["> 0%"] }))
@@ -113,7 +113,7 @@ gulp.task('mixCss', () => {
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest('dist/mix/styles/'))
+      .pipe(gulp.dest('dist/libs/styles/'))
         .pipe(browserSync.reload({stream:true}))
 });
 
@@ -175,7 +175,7 @@ gulp.task('scripts', () => {
 });
 
 /*****************************************
- mix Js
+ libs Js
  - procesa archivos ts.
  - Tarea $ gulp componentsJs.
  - Compila archivos JS.
@@ -187,20 +187,20 @@ gulp.task('scripts', () => {
  - Mapa Archivo js.
  ******************************************/
 gulp.task('componentsJs', () => {
-    return gulp.src('src/mix/js/**/*.js')
+  return gulp.src('src/libs/js/**/*.js')
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
                 this.emit('end');
             }}))
-        .pipe(concat('mix.js'))
+    .pipe(concat('libs.js'))
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(gulp.dest('dist/mix/js/'))
+    .pipe(gulp.dest('dist/'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/mix/js/'))
+    .pipe(gulp.dest('dist/'))
         .pipe(browserSync.reload({stream:true}))
 });
 
