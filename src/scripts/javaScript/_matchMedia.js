@@ -54,3 +54,30 @@
     key_1++;
   }
 })();
+
+
+function mediaQueryJs2() {
+  // mediaQuery -> Tamaños
+  const mediaQuery = [
+    matchMedia('(max-width: 576px)'),
+    matchMedia('(min-width: 577px) and (max-width: 768px)'),
+    matchMedia('(min-width: 769px) and (max-width: 992px)'),
+    matchMedia('(min-width: 993px)'),
+  ];
+
+  if (mediaQuery[0].matches) { // -> sm
+    //console.log('1 sm');
+
+  } else if (mediaQuery[1].matches) { // -> md
+    //console.log('2 md');
+
+  } else if (mediaQuery[2].matches) { // -> lg
+    //console.log('3 lg');
+
+  } else (mediaQuery[3].matches) // -> xl
+  {
+    //console.log('4 xl');
+
+  }
+
+};

@@ -1,0 +1,38 @@
+/**
+* Responsive
+* Adjustment from a maximum size
+* Mixin
+*
+* Mode of use :
+* .sidebar {
+*  width: 33.33%;
+*    @include bp (sm) {
+*      width: 100%;
+*    }
+* }
+*/
+
+@mixin bp($point) {
+  $bp__xs: "(max-width: 576px)";
+  $bp__sm: "(max-width: 768px)";
+  $bp__md: "(max-width: 992px)";
+  $bp__lg: "(max-width: 1200px)";
+
+  @if $point == xs { // -> Extra small < 576px
+    @media only screen and #{$bp__xs} {
+      @content;
+    }
+  } @else if $point == sm { // -> Small < 768px
+    @media only screen and #{$bp__sm} {
+      @content;
+    }
+  } @else if $point == md { // -> Large < 992px
+    @media only screen and #{$bp__md} {
+      @content;
+    }
+  } @else if $point == lg { // -> Extra large < 1200px
+    @media only screen and #{$bp__lg} {
+      @content;
+    }
+  }
+}
