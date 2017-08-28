@@ -55,8 +55,11 @@
   }
 })();
 
-
-function mediaQueryJs2() {
+/**
+ *  mediaQueryJs b4 estrictas
+ *
+ **/
+function mediaQueryEsJs() {
   // mediaQuery -> Tamaños
   const mediaQuery = [
     matchMedia('(max-width: 576px)'),
@@ -80,4 +83,14 @@ function mediaQueryJs2() {
 
   }
 
+};
+
+
+/**
+ * Funcion Resize
+ * Resize mediaQuery
+ **/
+
+window.onresize = () => {
+  //console.log('Hola Resize');
 };
