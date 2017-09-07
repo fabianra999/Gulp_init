@@ -1,5 +1,3 @@
-'use strict';
-
 /**
 * mediaQueryJs
 * - Tamaño mediasQuery´s de bootstrap 4.
@@ -56,7 +54,7 @@
 })();
 
 /**
- *  mediaQueryJs b4 estrictas
+ *  mediaQueryJs b4 (estrictas)
  *
  **/
 function mediaQueryEsJs() {
@@ -91,6 +89,6 @@ function mediaQueryEsJs() {
  * Resize mediaQuery
  **/
 
-window.onresize = () => {
+object.addEventListener("resize", () => {
   //console.log('Hola Resize');
-};
+});

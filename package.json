@@ -1,7 +1,7 @@
 {
-  "name": "noBrowser",
+  "name": "AC_EstrategiasContables",
   "version": "0.1.0",
-  "description": "Quench",
+  "description": "AC_EstrategiasContables",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

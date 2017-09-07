@@ -1,11 +1,11 @@
 <!-- Script -->
 
 <!--Components-->
-<script src="dist/components/js/components.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <!--javaScript-->
-<script src="dist/scripts/javaScript/main.js"></script>
+<script src="dist/scripts/javaScript/scriptJs.min.js"></script>
 <!--typeScript-->
-<script src="dist/scripts/tipeScript/scriptTs.js"></script>
+<script src="dist/scripts/tipeScript/scriptTs.min.js"></script>
 
 
 <!-- bower:js -->

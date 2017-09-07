@@ -2,7 +2,7 @@
 node_modules
 
 # Dependency directories dist
-dist
-bower_components
+#dist
+#bower_components
 
 !/.idea/

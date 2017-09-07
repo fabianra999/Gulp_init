@@ -42,7 +42,6 @@ gulp.task('bs-reload', () => {
     browserSync.reload();
 });
 
-
 /*****************************************
  Images
  - optimizar imágenes (peso).
@@ -52,7 +51,7 @@ gulp.task('bs-reload', () => {
  ******************************************/
 gulp.task('images', () => {
     gulp.src('src/images/**/*')
-        .pipe(cache(imagemin({ optimizationLevel: 9, progressive: true, interlaced: true })))
+        .pipe(cache(imagemin({optimizationLevel: 9, progressive: true, interlaced: true})))
         .pipe(gulp.dest('dist/images/'))
 });
 
@@ -72,18 +71,19 @@ gulp.task('styles', () => {
             errorHandler: function (error) {
                 console.log(error.message);
                 this.emit('end');
-            }}))
+            }
+        }))
         .pipe(sourcemaps.init())
-		.pipe(sass())
+        .pipe(sass())
         //.pipe(rename('nose.css')) //renombra archivo css
-        .pipe(autoprefixer({ browsers: ["> 0%"] }))
+        .pipe(autoprefixer({browsers: ["> 0%"]}))
         //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
         .pipe(gulp.dest('dist/styles/'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(sourcemaps.write('/'))
         .pipe(gulp.dest('dist/styles/'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -99,22 +99,23 @@ gulp.task('styles', () => {
  - Mapa Archivo SCSS.
  ******************************************/
 gulp.task('mixCss', () => {
-  gulp.src(['src/libs/styles/**/*.scss'])
+    gulp.src(['src/libs/styles/**/*.scss'])
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
                 this.emit('end');
-            }}))
-      .pipe(concat('libsMain.css'))
+            }
+        }))
+        .pipe(concat('libsMain.css'))
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(autoprefixer({ browsers: ["> 0%"] }))
+        .pipe(autoprefixer({browsers: ["> 0%"]}))
         //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(sourcemaps.write('/'))
-      .pipe(gulp.dest('dist/libs/styles/'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('dist/libs/styles/'))
+        .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -130,19 +131,23 @@ gulp.task('mixCss', () => {
  ******************************************/
 gulp.task('tipeScript', () => {
     return gulp.src('src/scripts/tipeScript/**/*.ts')
+        .pipe(sourcemaps.init())
         .pipe(ts({
             noImplicitAny: true,
             out: 'scriptTs.js'
         }))
         .pipe(concat('scriptTs.js'))
         .pipe(babel({
-            presets: ['es2015']
+            presets: [
+                ['es2015', {modules: false}]
+            ],
         }))
         .pipe(gulp.dest('dist/scripts/tipeScript/'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
+        .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('dist/scripts/tipeScript/'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -158,20 +163,25 @@ gulp.task('tipeScript', () => {
  ******************************************/
 gulp.task('scripts', () => {
     return gulp.src('src/scripts/javaScript/**/*.js')
+        .pipe(sourcemaps.init())
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
                 this.emit('end');
-            }}))
-		.pipe(concat('scriptJs.js'))
+            }
+        }))
+        .pipe(concat('scriptJs.js'))
         .pipe(babel({
-            presets: ['es2015']
+            presets: [
+                ['es2015', {modules: false}]
+            ],
         }))
         .pipe(gulp.dest('dist/scripts/javaScript/'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
+        .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('dist/scripts/javaScript/'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -187,21 +197,26 @@ gulp.task('scripts', () => {
  - Mapa Archivo js.
  ******************************************/
 gulp.task('componentsJs', () => {
-  return gulp.src('src/libs/js/**/*.js')
+    return gulp.src('src/libs/js/**/*.js')
+        .pipe(sourcemaps.init())
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
                 this.emit('end');
-            }}))
-    .pipe(concat('libs.js'))
-        .pipe(babel({
-            presets: ['es2015']
+            }
         }))
-    .pipe(gulp.dest('dist/'))
+        .pipe(concat('libs.js'))
+        .pipe(babel({
+            presets: [
+                ['es2015', {modules: false}]
+            ],
+        }))
+        .pipe(gulp.dest('dist/'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-    .pipe(gulp.dest('dist/'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -226,7 +241,8 @@ gulp.task('server', ['browser-sync'], () => {
  - Eliminar todo directorio y archivo de dist/
  - Tarea $ gulp clean.
  ******************************************/
-gulp.task('clean', ['clean-img', 'clean-js', 'clean-css'], () => { });
+gulp.task('clean', ['clean-img', 'clean-js', 'clean-css'], () => {
+});
 
 gulp.task('clean-img', () => {
     return gulp.src('dist/images/**/', {read: false})
@@ -247,8 +263,8 @@ gulp.task('clean-css', () => {
  - Reconstruir los archivos generados por las tareas.
  - Tarea $ gulp build.
  *****************************************/
-gulp.task('build', ['clean', 'images', 'styles', 'mixCss', 'tipeScript', 'scripts', 'componentsJs'], () => { });
-
+gulp.task('build', ['clean', 'images', 'styles', 'mixCss', 'tipeScript', 'scripts', 'componentsJs'], () => {
+});
 
 
 //=======================================================================//
@@ -261,7 +277,7 @@ gulp.task('build', ['clean', 'images', 'styles', 'mixCss', 'tipeScript', 'script
  - Tarea $ gulp bower-cr.
  - Tarea por Ajustar.
  ******************************************/
-let dest_path =  'www';// Define paths variables
+let dest_path = 'www';// Define paths variables
 gulp.task('bower-cr', () => {
     let jsFilter = gulpFilter('***/**/*.js', {restore: true}),
         cssFilter = gulpFilter('*****/****/***/**/*.css', {restore: true}),
@@ -274,7 +290,7 @@ gulp.task('bower-cr', () => {
         .pipe(gulp.dest(dest_path + '/js/'))
         .pipe(uglify())
         .pipe(rename({suffix: ".min"}))
-        .pipe(gulp.dest(dest_path +'/js/'))
+        .pipe(gulp.dest(dest_path + '/js/'))
         .pipe(jsFilter.restore)
 
         // grab vendor css files from bower_components, minify and push in /public
@@ -310,7 +326,7 @@ gulp.task('bowerJs-cr', () => {
         //.pipe(uglify())
         .pipe(rename({suffix: ".min"}))
         .pipe(uglify())
-        .pipe(gulp.dest(dest_path +'/js/'))
+        .pipe(gulp.dest(dest_path + '/js/'))
         .pipe(jsFilter.restore)
 
 });
@@ -348,7 +364,8 @@ gulp.task('bowerjs', () => {
  - Ejecuta las tareas: bowerjs, bowerCss.
  - Tarea $ gulp bowerIndexes.
  ******************************************/
-gulp.task('bowerIndexes', ['bowerjs', 'bowerCss'], () => { });
+gulp.task('bowerIndexes', ['bowerjs', 'bowerCss'], () => {
+});
 
 /*****************************************
  Defaul Tarea
@@ -358,10 +375,10 @@ gulp.task('bowerIndexes', ['bowerjs', 'bowerCss'], () => { });
  ******************************************/
 gulp.task('default', () => {
     gulp.watch("src/styles/**/*.scss", ['styles']);
-    gulp.watch("src/components/styles/**/*.scss", ['mixCss']);
+    gulp.watch("src/libs/styles/**/*.scss", ['mixCss']);
     gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
     gulp.watch("src/scripts/**/*.js", ['scripts']);
-    gulp.watch("src/components/js/**/*.js", ['componentsJs']);
+    gulp.watch("src/libs/js/**/*.js", ['componentsJs']);
     gulp.watch("src/images/***/**/*", ['images']);
     gulp.watch("*.html", ['bs-reload']);
 });

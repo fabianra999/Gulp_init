@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "description": "web project",
+  "name": "AC Estrategias",
+  "description": "AC Estrategias Contables y Financieras ",
   "main": "view/components/head.php",
   "directory": "app/components/",
   "authors": [
@@ -13,7 +13,6 @@
     "node"
   ],
   "dependencies": {
-    "bootstrap": "3.3.4",
     "jquery-ui": "^1.12.1",
     "gsap": "^1.19.1",
     "slick-carousel": "^1.6.0",
