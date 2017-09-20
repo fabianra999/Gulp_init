@@ -26,5 +26,15 @@
 </html>
 
 
-
-
+<div class="subtitle__tickets">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <h2 class=""><i class="fa fa-bar-chart"></i> Gráficas de estado.</h2>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <p class="text-justify"><b>Tipos de ticket<br>Fecha preterminada (Ultimos 10
+        dias)</b>
+      </p>
+    </div>
+  </div>
+</div>
