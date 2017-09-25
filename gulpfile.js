@@ -26,11 +26,11 @@ var gulp = require('gulp'),
  - Tarea $ gulp browser-sync.
  ******************************************/
 gulp.task('browser-sync', () => {
-    browserSync({
-        server: {
-            baseDir: "./"
-        }
-    });
+  browserSync({
+    server: {
+      baseDir: "./"
+    }
+  });
 });
 
 /*****************************************
@@ -39,7 +39,7 @@ gulp.task('browser-sync', () => {
  - Tarea $ gulp bs-reload.
  ******************************************/
 gulp.task('bs-reload', () => {
-    browserSync.reload();
+  browserSync.reload();
 });
 
 /*****************************************
@@ -50,9 +50,9 @@ gulp.task('bs-reload', () => {
  - Directorio procesado dist/images.
  ******************************************/
 gulp.task('images', () => {
-    gulp.src('src/images/**/*')
-        .pipe(cache(imagemin({optimizationLevel: 9, progressive: true, interlaced: true})))
-        .pipe(gulp.dest('dist/images/'))
+  gulp.src('src/images/**/*')
+    .pipe(cache(imagemin({optimizationLevel: 9, progressive: true, interlaced: true})))
+    .pipe(gulp.dest('dist/images/'))
 });
 
 /*****************************************
@@ -66,24 +66,24 @@ gulp.task('images', () => {
  - Mapa Archivo SCSS.
  ******************************************/
 gulp.task('styles', () => {
-    gulp.src(['src/styles/**/*.scss'])
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass())
-        //.pipe(rename('nose.css')) //renombra archivo css
-        .pipe(autoprefixer({browsers: ["> 0%"]}))
-        //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
-        .pipe(gulp.dest('dist/styles/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
-        .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest('dist/styles/'))
-        .pipe(browserSync.reload({stream: true}))
+  gulp.src(['src/styles/**/*.scss'])
+    .pipe(plumber({
+    errorHandler: function (error) {
+      console.log(error.message);
+      this.emit('end');
+    }
+  }))
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+  //.pipe(rename('nose.css')) //renombra archivo css
+    .pipe(autoprefixer({browsers: ["> 0%"]}))
+  //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
+    .pipe(gulp.dest('dist/styles/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(sourcemaps.write('/'))
+    .pipe(gulp.dest('dist/styles/'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -99,23 +99,23 @@ gulp.task('styles', () => {
  - Mapa Archivo SCSS.
  ******************************************/
 gulp.task('mixCss', () => {
-    gulp.src(['src/libs/styles/**/*.scss'])
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(concat('libsMain.css'))
-        .pipe(sourcemaps.init())
-        .pipe(sass())
-        .pipe(autoprefixer({browsers: ["> 0%"]}))
-        //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
-        .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest('dist/libs/styles/'))
-        .pipe(browserSync.reload({stream: true}))
+  gulp.src(['src/libs/styles/**/*.scss'])
+    .pipe(plumber({
+    errorHandler: function (error) {
+      console.log(error.message);
+      this.emit('end');
+    }
+  }))
+    .pipe(concat('libsMain.css'))
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(autoprefixer({browsers: ["> 0%"]}))
+  //.pipe(autoprefixer(['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12', 'safari 5', 'ios 6', 'Firefox 14']))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(sourcemaps.write('/'))
+    .pipe(gulp.dest('dist/libs/styles/'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -130,24 +130,24 @@ gulp.task('mixCss', () => {
  - Mapa Archivo js.
  ******************************************/
 gulp.task('tipeScript', () => {
-    return gulp.src('src/scripts/tipeScript/**/*.ts')
-        .pipe(sourcemaps.init())
-        .pipe(ts({
-            noImplicitAny: true,
-            out: 'scriptTs.js'
-        }))
-        .pipe(concat('scriptTs.js'))
-        .pipe(babel({
-            presets: [
-                ['es2015', {modules: false}]
-            ],
-        }))
-        .pipe(gulp.dest('dist/scripts/tipeScript/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('dist/scripts/tipeScript/'))
-        .pipe(browserSync.reload({stream: true}))
+  return gulp.src('src/scripts/tipeScript/**/*.ts')
+    .pipe(sourcemaps.init())
+    .pipe(ts({
+    noImplicitAny: true,
+    out: 'scriptTs.js'
+  }))
+    .pipe(concat('scriptTs.js'))
+    .pipe(babel({
+    presets: [
+      ['es2015', {modules: false}]
+    ],
+  }))
+    .pipe(gulp.dest('dist/scripts/tipeScript/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest('dist/scripts/tipeScript/'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -162,26 +162,26 @@ gulp.task('tipeScript', () => {
  - Mapa Archivo js.
  ******************************************/
 gulp.task('scripts', () => {
-    return gulp.src('src/scripts/javaScript/**/*.js')
-        .pipe(sourcemaps.init())
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(concat('scriptJs.js'))
-        .pipe(babel({
-            presets: [
-                ['es2015', {modules: false}]
-            ],
-        }))
-        .pipe(gulp.dest('dist/scripts/javaScript/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('dist/scripts/javaScript/'))
-        .pipe(browserSync.reload({stream: true}))
+  return gulp.src('src/scripts/javaScript/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(plumber({
+    errorHandler: function (error) {
+      console.log(error.message);
+      this.emit('end');
+    }
+  }))
+    .pipe(concat('scriptJs.js'))
+    .pipe(babel({
+    presets: [
+      ['es2015', {modules: false}]
+    ],
+  }))
+    .pipe(gulp.dest('dist/scripts/javaScript/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest('dist/scripts/javaScript/'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -197,26 +197,26 @@ gulp.task('scripts', () => {
  - Mapa Archivo js.
  ******************************************/
 gulp.task('componentsJs', () => {
-    return gulp.src('src/libs/js/**/*.js')
-        .pipe(sourcemaps.init())
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(concat('libs.js'))
-        .pipe(babel({
-            presets: [
-                ['es2015', {modules: false}]
-            ],
-        }))
-        .pipe(gulp.dest('dist/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('dist/'))
-        .pipe(browserSync.reload({stream: true}))
+  return gulp.src('src/libs/js/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(plumber({
+    errorHandler: function (error) {
+      console.log(error.message);
+      this.emit('end');
+    }
+  }))
+    .pipe(concat('libs.js'))
+    .pipe(babel({
+    presets: [
+      ['es2015', {modules: false}]
+    ],
+  }))
+    .pipe(gulp.dest('dist/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 /*****************************************
@@ -227,13 +227,13 @@ gulp.task('componentsJs', () => {
  - Queda atento a cambios de todas las tareas.
  ******************************************/
 gulp.task('server', ['browser-sync'], () => {
-    gulp.watch("src/styles/**/*.scss", ['styles']);
-    gulp.watch("src/components/styles/**/*.scss", ['mixCss']);
-    gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
-    gulp.watch("src/scripts/**/*.js", ['scripts']);
-    gulp.watch("src/components/js/**/*.js", ['componentsJs']);
-    gulp.watch("src/images/**/*", ['images']);
-    gulp.watch("*.html", ['bs-reload']);
+  gulp.watch("src/styles/**/*.scss", ['styles']);
+  gulp.watch("src/components/styles/**/*.scss", ['mixCss']);
+  gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
+  gulp.watch("src/scripts/**/*.js", ['scripts']);
+  gulp.watch("src/components/js/**/*.js", ['componentsJs']);
+  gulp.watch("src/images/**/*", ['images']);
+  gulp.watch("**/*.html", ['bs-reload']);
 });
 
 /*****************************************
@@ -245,16 +245,16 @@ gulp.task('clean', ['clean-img', 'clean-js', 'clean-css'], () => {
 });
 
 gulp.task('clean-img', () => {
-    return gulp.src('dist/images/**/', {read: false})
-        .pipe(clean());
+  return gulp.src('dist/images/**/', {read: false})
+    .pipe(clean());
 });
 gulp.task('clean-js', () => {
-    return gulp.src('dist/scripts/**/*.js', {read: false})
-        .pipe(clean());
+  return gulp.src('dist/scripts/**/*.js', {read: false})
+    .pipe(clean());
 });
 gulp.task('clean-css', () => {
-    return gulp.src('dist/styles/**/*.css', {read: false})
-        .pipe(clean());
+  return gulp.src('dist/styles/**/*.css', {read: false})
+    .pipe(clean());
 });
 
 /*****************************************
@@ -279,32 +279,32 @@ gulp.task('build', ['clean', 'images', 'styles', 'mixCss', 'tipeScript', 'script
  ******************************************/
 let dest_path = 'www';// Define paths variables
 gulp.task('bower-cr', () => {
-    let jsFilter = gulpFilter('***/**/*.js', {restore: true}),
-        cssFilter = gulpFilter('*****/****/***/**/*.css', {restore: true}),
-        fontFilter = gulpFilter(['***/**/*.eot', '***/**/*.woff', '***/**/*.svg', '***/**/*.ttf'], {restore: true});
+  let jsFilter = gulpFilter('***/**/*.js', {restore: true}),
+      cssFilter = gulpFilter('*****/****/***/**/*.css', {restore: true}),
+      fontFilter = gulpFilter(['***/**/*.eot', '***/**/*.woff', '***/**/*.svg', '***/**/*.ttf'], {restore: true});
 
-    return gulp.src(mainBowerFiles())
+  return gulp.src(mainBowerFiles())
 
-    // grab vendor js files from bower_components, minify and push in /public
-        .pipe(jsFilter)
-        .pipe(gulp.dest(dest_path + '/js/'))
-        .pipe(uglify())
-        .pipe(rename({suffix: ".min"}))
-        .pipe(gulp.dest(dest_path + '/js/'))
-        .pipe(jsFilter.restore)
+  // grab vendor js files from bower_components, minify and push in /public
+    .pipe(jsFilter)
+    .pipe(gulp.dest(dest_path + '/js/'))
+    .pipe(uglify())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest(dest_path + '/js/'))
+    .pipe(jsFilter.restore)
 
-        // grab vendor css files from bower_components, minify and push in /public
-        .pipe(cssFilter)
-        .pipe(gulp.dest(dest_path + '/css'))
-        .pipe(minifycss())
-        .pipe(rename({suffix: ".min"}))
-        .pipe(gulp.dest(dest_path + '/css'))
-        .pipe(cssFilter.restore)
+  // grab vendor css files from bower_components, minify and push in /public
+    .pipe(cssFilter)
+    .pipe(gulp.dest(dest_path + '/css'))
+    .pipe(minifycss())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest(dest_path + '/css'))
+    .pipe(cssFilter.restore)
 
-        // grab vendor font files from bower_components and push in /public
-        .pipe(fontFilter)
-        .pipe(flatten())
-        .pipe(gulp.dest(dest_path + '/fonts'));
+  // grab vendor font files from bower_components and push in /public
+    .pipe(fontFilter)
+    .pipe(flatten())
+    .pipe(gulp.dest(dest_path + '/fonts'));
 });
 
 /*****************************************
@@ -315,19 +315,19 @@ gulp.task('bower-cr', () => {
  ******************************************/
 gulp.task('bowerJs-cr', () => {
 
-    let dest_path = 'dist/components';// Define paths variables
-    let jsFilter = gulpFilter('***/**/*.js', {restore: true});
+  let dest_path = 'dist/components';// Define paths variables
+  let jsFilter = gulpFilter('***/**/*.js', {restore: true});
 
-    return gulp.src(mainBowerFiles())
+  return gulp.src(mainBowerFiles())
 
-    // grab vendor js files from bower_components, minify and push in /public
-        .pipe(jsFilter)
-        //.pipe(gulp.dest(dest_path + '/js/'))
-        //.pipe(uglify())
-        .pipe(rename({suffix: ".min"}))
-        .pipe(uglify())
-        .pipe(gulp.dest(dest_path + '/js/'))
-        .pipe(jsFilter.restore)
+  // grab vendor js files from bower_components, minify and push in /public
+    .pipe(jsFilter)
+  //.pipe(gulp.dest(dest_path + '/js/'))
+  //.pipe(uglify())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(uglify())
+    .pipe(gulp.dest(dest_path + '/js/'))
+    .pipe(jsFilter.restore)
 
 });
 
@@ -337,12 +337,12 @@ gulp.task('bowerJs-cr', () => {
  - Tarea $ gulp bowerCss.
  ******************************************/
 gulp.task('bowerCss', () => {
-    gulp.src('./view/components/head.php')
-        .pipe(wiredep({
-            optional: 'configuration',
-            goes: 'here'
-        }))
-        .pipe(gulp.dest('./view/components/'));
+  gulp.src('./view/components/head.php')
+    .pipe(wiredep({
+    optional: 'configuration',
+    goes: 'here'
+  }))
+    .pipe(gulp.dest('./view/components/'));
 });
 
 /*****************************************
@@ -351,12 +351,12 @@ gulp.task('bowerCss', () => {
  - Tarea $ gulp bowerjs.
  ******************************************/
 gulp.task('bowerjs', () => {
-    gulp.src('./view/components/scripts.php')
-        .pipe(wiredep({
-            optional: 'configuration',
-            goes: 'here'
-        }))
-        .pipe(gulp.dest('./view/components/'));
+  gulp.src('./view/components/scripts.php')
+    .pipe(wiredep({
+    optional: 'configuration',
+    goes: 'here'
+  }))
+    .pipe(gulp.dest('./view/components/'));
 });
 
 /*****************************************
@@ -374,11 +374,11 @@ gulp.task('bowerIndexes', ['bowerjs', 'bowerCss'], () => {
  - Queda atento a cambios de todas las tareas.
  ******************************************/
 gulp.task('default', () => {
-    gulp.watch("src/styles/**/*.scss", ['styles']);
-    gulp.watch("src/libs/styles/**/*.scss", ['mixCss']);
-    gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
-    gulp.watch("src/scripts/**/*.js", ['scripts']);
-    gulp.watch("src/libs/js/**/*.js", ['componentsJs']);
-    gulp.watch("src/images/***/**/*", ['images']);
-    gulp.watch("*.html", ['bs-reload']);
+  gulp.watch("src/styles/**/*.scss", ['styles']);
+  gulp.watch("src/libs/styles/**/*.scss", ['mixCss']);
+  gulp.watch("src/scripts/tipeScript/**/*.ts", ['tipeScript']);
+  gulp.watch("src/scripts/**/*.js", ['scripts']);
+  gulp.watch("src/libs/js/**/*.js", ['componentsJs']);
+  gulp.watch("src/images/***/**/*", ['images']);
+  gulp.watch("*.html", ['bs-reload']);
 });
