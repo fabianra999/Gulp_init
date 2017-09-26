@@ -1,6 +1,6 @@
 /**
  * Animacion Scroll vinculo
- *	clase activa para efecto "aAnimate"
+ *    clase activa para efecto "aAnimate"
  */
 function linkAnimate() {
     $('body').on('click', 'a.aAnimate', function () {
@@ -13,7 +13,7 @@ function linkAnimate() {
 
 /**
  * Scroll horizontal
- *	rueda mouse solo en div class container-horizontal
+ *    rueda mouse solo en div class container-horizontal
  */
 function scrollHorizontal() {
     $('.container-horizontal').on('mousewheel', function (event, delta) {
@@ -34,7 +34,7 @@ function slideToggle() {
     // Set the options for the effect type chosen (Right Left Up Down)
     var options = { direction: "down" };
 
-    // Set the duration (default: 400 millisecond	s)
+    // Set the duration (default: 400 milliseconds)
     var duration = 500;
 
     $('#bannerfullscreen').toggle(effect, options, duration);
@@ -175,7 +175,7 @@ function viewportSize() {
  *  Llamados
  *
  ==============================================================================*/
-object.addEventListener("resize", function () {
+window.addEventListener("resize", function () {
     //detectBrowser();
     //mobileDetecting();
     //viewportSize();
@@ -288,6 +288,6 @@ function mediaQueryEsJs() {
  * Resize mediaQuery
  **/
 
-object.addEventListener("resize", function () {
+window.addEventListener("resize", function () {
     //console.log('Hola Resize');
 });
