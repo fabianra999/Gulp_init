@@ -11,6 +11,7 @@ Componentes.
 
 
 Init.  
+(npm init -y) => no completa datos genera pakaje.json.
 1.	Ajustar informacion del package.json.
 2.	Instalar modulos.
 	-	$ npm i
@@ -28,7 +29,7 @@ Instalación completa.
 3.	Instalar gulp global mente. (-g)
 4.  Instalar modulos.
 	-	Uso gloval ($ npm install --save gulp-install )
-	-	Uso local ($ npm install --save-dev gulp-install )
+	-	Uso local ($ npm install --save-dev gulp-install ) => (npm -D)
 
 
 Instalación Bower.

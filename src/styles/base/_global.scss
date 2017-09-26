@@ -4,107 +4,107 @@
 *, 
 *::after,
 *::before{
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 html{
-	/* box model
-	============================================================*/
-	box-sizing: border-box;
+  /* box model
+  ============================================================*/
+  box-sizing: border-box;
 
-	/* Scroll css
-	============================================================*/
-	scrollbar {
-		width: 8px;
-		height: 10px;
-	}
+  /* Scroll css
+  ============================================================*/
+  scrollbar {
+    width: 8px;
+    height: 10px;
+  }
 
-	scrollbar-button {
-		width: 8px;
-		height: 5px;
-	}
+  scrollbar-button {
+    width: 8px;
+    height: 5px;
+  }
 
-	// btn scroll
-	scrollbar-thumb {
-		background: claro($gris, 40%);
-		border: 71px none $blanco;
-		border-radius: 31px;
-	}
+  // btn scroll
+  scrollbar-thumb {
+    background: claro($gris, 40%);
+    border: 71px none $blanco;
+    border-radius: 31px;
+  }
 
-	scrollbar-thumb:hover {
-		background: $gris;
-	}
+  scrollbar-thumb:hover {
+    background: $gris;
+  }
 
-	scrollbar-thumb:active {
-		background: $gris;
-	}
+  scrollbar-thumb:active {
+    background: $gris;
+  }
 
-	// barra scroll
-	scrollbar-track {
-		background: $gris;
-		width: 2px;
-		border:  3px solid $blanco;
-		border-radius: 34px;
-	}
+  // barra scroll
+  scrollbar-track {
+    background: $gris;
+    width: 2px;
+    border:  3px solid $blanco;
+    border-radius: 34px;
+  }
 
-	scrollbar-track:hover {
-		background: claro($gris, 40%);
-	}
+  scrollbar-track:hover {
+    background: claro($gris, 40%);
+  }
 
-	scrollbar-track:active {
-		background: claro($gris, 40%);
-	}
+  scrollbar-track:active {
+    background: claro($gris, 40%);
+  }
 
-	scrollbar-corner {
+  scrollbar-corner {
 
-	}
+  }
 
 
-	//webkit
+  //webkit
 
-	::-webkit-scrollbar {
-		width: 8px;
-		height: 10px;
-	}
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+  }
 
-	::-webkit-scrollbar-button {
-		width: 8px;
-		height: 5px;
-	}
+  ::-webkit-scrollbar-button {
+    width: 8px;
+    height: 5px;
+  }
 
-	// btn scroll
-	::-webkit-scrollbar-thumb {
-		background: claro($gris, 40%);
-		border: 71px none $blanco;
-		border-radius: 31px;
-	}
+  // btn scroll
+  ::-webkit-scrollbar-thumb {
+    background: claro($gris, 40%);
+    border: 71px none $blanco;
+    border-radius: 31px;
+  }
 
-	::-webkit-scrollbar-thumb:hover {
-		background: $gris;
-	}
+  ::-webkit-scrollbar-thumb:hover {
+    background: $gris;
+  }
 
-	::-webkit-scrollbar-thumb:active {
-		background: $gris;
-	}
+  ::-webkit-scrollbar-thumb:active {
+    background: $gris;
+  }
 
-	// barra scroll
-	::-webkit-scrollbar-track {
-		background: $gris;
-		width: 2px;
-		border:  3px solid $blanco;
-		border-radius: 34px;
-	}
+  // barra scroll
+  ::-webkit-scrollbar-track {
+    background: $gris;
+    width: 2px;
+    border:  3px solid $blanco;
+    border-radius: 34px;
+  }
 
-	::-webkit-scrollbar-track:hover {
-		background: claro($gris, 40%);
-	}
+  ::-webkit-scrollbar-track:hover {
+    background: claro($gris, 40%);
+  }
 
-	::-webkit-scrollbar-track:active {
-		background: claro($gris, 40%);
-	}
+  ::-webkit-scrollbar-track:active {
+    background: claro($gris, 40%);
+  }
 
-	::-webkit-scrollbar-corner {
+  ::-webkit-scrollbar-corner {
 
-	}
+  }
 }
 body{
 
@@ -112,68 +112,68 @@ body{
 
 /*====== font color ======*/
 .fc-blanco{
-	color: $blanco;
+  color: $blanco;
 }
 .fc-gris{
-	color: $gris;
+  color: $gris;
 }
 .fc-azul{
-	color: $azul;
+  color: $azul;
 }
 .fc-am{
-	color: $amarillo;
+  color: $amarillo;
 }
 
 /*====== font weight ======*/
 .fw-xs{
-	font-weight: 300;
+  font-weight: 300;
 }
 .fw-sm{
-	font-weight: 500;
+  font-weight: 500;
 }
 .fw-md{
-	font-weight: 700;
+  font-weight: 700;
 }
 .fw-lg{
-	font-weight: 900;
+  font-weight: 900;
 }
 .fw-b{
-	font-weight: bold;
+  font-weight: bold;
 }
 
 /*====== font size ======*/
 .fs-xs{
-	font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 .fs-sm{
-	font-size: 2.3rem;
+  font-size: 2.3rem;
 }
 .fs-md{
-	font-size: 3rem;
+  font-size: 3rem;
 }
 .fs-lg{
-	font-size: 3.3em;
+  font-size: 3.3em;
 }
 
 /*====== font align ======*/
 .ta-c{
-	text-align: center;
+  text-align: center;
 }
 .ta-l{
-	text-align: left;
+  text-align: left;
 }
 .ta-r{
-	text-align: right;
+  text-align: right;
 }
 
 /*====== font transform ======*/
 .tt-up{
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 /*====== font transform ======*/
 .padding{
-	padding: 1rem;
+  padding: 1rem;
 }
 
 /*====== font family ======*/
@@ -182,20 +182,27 @@ body{
 
 /*====== text overflow ======*/
 .tx-overflow{
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /*====== floar none ======*/
 .floadNone{
-	float: inherit;
-//	.clearfix();
+  float: inherit;
+  //	.clearfix();
 }
 
 /*====== text overflow ======*/
 .spans{
-	font-size: 10px;
-	font-weight: 600;
-	letter-spacing: 0px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+
+/*====== input ======*/
+input {
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
 }
