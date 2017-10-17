@@ -200,9 +200,55 @@ body{
   letter-spacing: 0px;
 }
 
-/*====== input ======*/
+/**
+* input
+*    input format webkit (fondo amarillo)
+*/
 input {
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
+}
+
+
+
+/**
+* Text HoverFlow
+*/
+
+.tx-h{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: inherit;
+}
+
+/**
+* space
+*    class => sp-
+*/
+[class^="sp-"] {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.sp-1 {
+  padding: 1rem 0;
+}
+
+.sp-2 {
+  padding: 1.5rem 0;
+}
+
+.sp-3 {
+  padding: 2rem 0;
+}
+
+.sp-4 {
+  padding: 2.5rem 0;
+}
+
+.sp-5 {
+  padding: 3rem 0;
 }
