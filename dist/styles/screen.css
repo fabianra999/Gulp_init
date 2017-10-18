@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/****** Media Query******/
+/****** Media Query******/
 /****** Base ******/
 /* Varables Colores
 ===================================================*/
@@ -41,12 +43,12 @@
 
 html {
   /* box model
-	============================================================*/
+  ============================================================*/
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   /* Scroll css
-	============================================================*/ }
+  ============================================================*/ }
   html scrollbar {
     width: 8px;
     height: 10px; }
@@ -178,6 +180,47 @@ html {
   font-weight: 600;
   letter-spacing: 0px; }
 
+/**
+* input
+*    input format webkit (fondo amarillo)
+*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset !important; }
+
+/**
+* Text HoverFlow
+*/
+.tx-h {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  line-height: inherit; }
+
+/**
+* space
+*    class => sp-
+*/
+[class^="sp-"] {
+  display: block;
+  font-size: 0;
+  line-height: 0; }
+
+.sp-1 {
+  padding: 1rem 0; }
+
+.sp-2 {
+  padding: 1.5rem 0; }
+
+.sp-3 {
+  padding: 2rem 0; }
+
+.sp-4 {
+  padding: 2.5rem 0; }
+
+.sp-5 {
+  padding: 3rem 0; }
+
 .row-center {
   display: table;
   height: 100%; }
@@ -210,18 +253,15 @@ ul {
 
 /****** Theme ******/
 /****** Layouts ******/
-body {
-  background-color: tomato;
-  color: red; }
-
 /****** State ******/
 /****** Mobile ******/
 /**
 * Responsive Screen
+*  config screen.scss
+*
 * --> Responsive Web Design <--
 *     Mobile First Web Design
 *
-* Select the type of Responsive.
 */
 /****** Responsive Web Design  ******/
 /**
@@ -235,23 +275,86 @@ body {
 *     -> Extra large ≥1200px = .col-xl-
 */
 /****** Mobile First Web Design  ******/
+/**
+*  Grid options Bootstrap 4
+*   --> Mobile First Web Design <--
+*        (Mobile to Desktop)
+*     -> Extra small <576px = .col-
+*     -> Small ≥576px = .col-sm-
+*     -> Medium ≥768px = .col-md-
+*     -> Large ≥992px = .col-lg-
+*     -> Extra large ≥1200px = .col-xl-
+*/
 /****** Query-Mixins  ******/
 /**
 * Responsive
 * Adjustment from a maximum size
-* Mixin
-*
+
+* Break Points
+    $bp__xs: 480;
+    $bp__sm: 768;
+    $bp__md: 992;
+    $bp__lg: 1200;
+    $bp__xl: 1366;
+    $bp__xxl: 1920;
+
+* Method
+Method by segment (Mobile <=> Desktop)
+Mobile First Method
+Non-Mobile First Method
+
 * Mode of use :
-* .sidebar {
-*  width: 33.33%;
-*    @include bp (sm) {
-*      width: 100%;
-*    }
-* }
+   .sidebar {
+    width: 33.33%;
+      @include bp (sm) {
+        width: 100%;
+      }
+   }
 */
+/**
+* Method by segment
+*  Mobile <=> Desktop
+*  Break points by ranges
+**/
+/**
+* Non-Mobile First Method
+*  Desktop > Mobile
+**/
+/**
+* Mobile First Method
+*  Mobile > Desktop
+**/
+/*@media all and (max-width: 1199px) { ... }
+  @media all and (max-width: 991px) { ... }
+  @media all and (max-width: 768px) { ... }
+  @media all and (max-width: 575px) { ... }*/
 /*==============================================================================================================================*/
 /**
 * Responsive
 * Import Files Mobiles
 * Mixin -> Adjustment from a maximum size
 */
+/****** Print ******/
+/**
+* Estilos Impresion
+**/
+@media print {
+  /**
+  * Estilos Globales
+  **/
+  /**
+  * Clase impide imprimir
+  **/
+  .no-print {
+    display: none !important;
+    height: 0;
+    width: 0; }
+  /**
+*  Indicamos el salto de pagina
+*/
+  .lineJumpPrint {
+    display: block;
+    page-break-before: always; }
+  /**
+  * Estilos Layouts
+  **/ }

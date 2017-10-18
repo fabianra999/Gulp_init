@@ -1,5 +1,16 @@
+  /**
+  * Clase impide imprimir
+  **/
 .no-print {
   display: none !important;
   height: 0;
   width: 0;
+}
+
+/**
+*  Indicamos el salto de pagina
+*/
+.lineJumpPrint{
+  display:block;
+  page-break-before:always;
 }

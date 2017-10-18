@@ -8,25 +8,26 @@
 *     -> Large ≥992px = .col-lg-
 *     -> Extra large ≥1200px = .col-xl-
 */
+@if $Mobile_First_Web_Design == true {
+  // -> Extra small <576px = .col-
+  @media only screen and (max-width: 576px) {
+    //yea
+  }
 
-// -> Extra small <576px = .col-
-@media only screen and (max-width: 576px) {
-  //yea
-}
+  // -> Small ≥576px = .col-sm-
+  @media only screen and (min-width: 577px) and (max-width: 768px) {
 
-// -> Small ≥576px = .col-sm-
-@media only screen and (min-width: 577px) and (max-width: 768px) {
+  }
 
-}
+  // -> Medium ≥768px = .col-md-
+  @media only screen and (min-width: 769px) and (max-width: 992px) {
+  }
 
-// -> Medium ≥768px = .col-md-
-@media only screen and (min-width: 769px) and (max-width: 992px) {
-}
+  // -> Large ≥992px = .col-lg-
+  @media only screen and (min-width: 993px) and (max-width: 1199px) {
+  }
 
-// -> Large ≥992px = .col-lg-
-@media only screen and (min-width: 993px) and (max-width: 1199px) {
-}
-
-// > Extra large ≥1200px = .col-xl-
-@media only screen and (min-width: 993px) {
-}
+  // > Extra large ≥1200px = .col-xl-
+  @media only screen and (min-width: 993px) {
+  }
+};

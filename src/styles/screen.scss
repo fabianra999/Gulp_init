@@ -1,3 +1,14 @@
+/****** Media Query******/
+$Responsive_Web_Design:       true;
+$Mobile_First_Web_Design:    false;
+
+/****** Media Query******/
+$Break_Points_Ranges:         true;
+$Mobile_First_Method:        false;
+$Non-Mobile_First_Method:     true;
+$Bootstrap_4:                 true;
+
+
 /****** Base ******/
 @import 'base/variables';
 @import 'base/placeholder';

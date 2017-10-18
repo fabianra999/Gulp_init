@@ -1,16 +1,17 @@
 /**
 * Responsive Screen
+*  config screen.scss
+*
 * --> Responsive Web Design <--
 *     Mobile First Web Design
 *
-* Select the type of Responsive.
 */
 
 /****** Responsive Web Design  ******/
 @import 'Responsive_Screen/Responsive-Web-Design';
 
 /****** Mobile First Web Design  ******/
-// @import 'Responsive_Screen/Mobile-First-Web-Design';
+@import 'Responsive_Screen/Mobile-First-Web-Design';
 
 /****** Query-Mixins  ******/
 @import 'Responsive_Screen/Query-Mixins';

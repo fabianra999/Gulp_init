@@ -1,38 +1,165 @@
 /**
 * Responsive
 * Adjustment from a maximum size
-* Mixin
-*
+
+* Break Points
+    $bp__xs: 480;
+    $bp__sm: 768;
+    $bp__md: 992;
+    $bp__lg: 1200;
+    $bp__xl: 1366;
+    $bp__xxl: 1920;
+
+* Method
+Method by segment (Mobile <=> Desktop)
+Mobile First Method
+Non-Mobile First Method
+
 * Mode of use :
-* .sidebar {
-*  width: 33.33%;
-*    @include bp (sm) {
-*      width: 100%;
-*    }
-* }
+   .sidebar {
+    width: 33.33%;
+      @include bp (sm) {
+        width: 100%;
+      }
+   }
 */
 
-@mixin bp($point) {
-  $bp__xs: "(max-width: 576px)";
-  $bp__sm: "(max-width: 768px)";
-  $bp__md: "(max-width: 992px)";
-  $bp__lg: "(max-width: 1200px)";
 
-  @if $point == xs { // -> Extra small < 576px
-    @media only screen and #{$bp__xs} {
-      @content;
-    }
-  } @else if $point == sm { // -> Small < 768px
-    @media only screen and #{$bp__sm} {
-      @content;
-    }
-  } @else if $point == md { // -> Large < 992px
-    @media only screen and #{$bp__md} {
-      @content;
-    }
-  } @else if $point == lg { // -> Extra large < 1200px
-    @media only screen and #{$bp__lg} {
-      @content;
+/**
+* Method by segment
+*  Mobile <=> Desktop
+*  Break points by ranges
+**/
+@if $Break_Points_Ranges == true {
+  @mixin bp($point) {
+    $bp__xs: 480;
+    $bp__sm: 768;
+    $bp__md: 992;
+    $bp__lg: 1200;
+    $bp__xl: 1366;
+    $bp__xxl: 1920;
+
+    @if $point == xs { // -> (< 414px)
+      @media only screen and (max-width: #{$bp__xs}px){
+        @content;
+      }
+    } @else if $point == sm { // -> (> 414px && < 768px)
+      @media only screen and (min-width: #{$bp__xs+1}px) and (max-width: #{$bp__sm}px) {
+        @content;
+      }
+    } @else if $point == md { // -> (> 768px && < 992px)
+      @media only screen and (min-width: #{$bp__sm + 1}px) and (max-width: #{$bp__md}px) {
+        @content;
+      }
+    } @else if $point == lg { // -> (> 992px && < 1280px)
+      @media only screen and (min-width: #{$bp__md + 1}px) and (max-width: #{$bp__lg}px){
+        @content;
+      }
+    }@else if $point == lg { // -> (> 992px && < 1280px)
+      @media only screen and (min-width: #{$bp__lg + 1}px) and (max-width: #{$bp__xl}px){
+        @content;
+      }
+    }@else if $point == lg { // -> (> 992px && < 1280px)
+      @media only screen and (min-width: #{$bp__xl + 1}px) and (max-width: #{$bp__xxl}px){
+        @content;
+      }
+    }@else if $point == xxl { // -> (> 1280px && < 1366px)
+      @media only screen and (min-width: #{$bp__lg + 1}px) {
+        @content;
+      }
     }
   }
 }
+
+/**
+* Non-Mobile First Method
+*  Desktop > Mobile
+**/
+@if $Non-Mobile_First_Method == true {
+  @mixin bpd($point) {
+    $bp__xs: 480;
+    $bp__sm: 768;
+    $bp__md: 992;
+    $bp__lg: 1200;
+    $bp__xl: 1366;
+    $bp__xxl: 1920;
+
+
+    @if $point == xs { // -> (< 414px)
+      @media only screen and (max-width: #{$bp__xs}px){
+        @content;
+      }
+    }@else if $point == sm { // -> (> 1280px && < 1366px)
+      @media only screen and (max-width: #{$bp__sm}px) {
+        @content;
+      }
+    }@else if $point == md { // -> (> 1280px && < 1366px)
+      @media only screen and (max-width: #{$bp__md}px) {
+        @content;
+      }
+    }@else if $point == lg { // -> (> 1280px && < 1366px)
+      @media only screen and (max-width: #{$bp__lg}px) {
+        @content;
+      }
+    }@else if $point == xl { // -> (> 1280px && < 1366px)
+      @media only screen and (max-width: #{$bp__xl}px) {
+        @content;
+      }
+    }@else if $point == xxl { // -> (> 1280px && < 1366px)
+      @media only screen and (min-width: #{$bp__xxl}px) {
+        @content;
+      }
+    }
+  }
+}
+
+/**
+* Mobile First Method
+*  Mobile > Desktop
+**/
+@if $Mobile_First_Method == true {
+  @mixin bpm($point) {
+    $bp__xs: 480;
+    $bp__sm: 768;
+    $bp__md: 992;
+    $bp__lg: 1200;
+    $bp__xl: 1366;
+    $bp__xxl: 1920;
+
+
+    @if $point == xs { // -> (< 414px)
+      @media only screen and (min-width: #{$bp__xs}px){
+        @content;
+      }
+    }@else if $point == sm { // -> (> 1280px && < 1366px)
+      @media only screen and (min-width: #{$bp__sm}px) {
+        @content;
+      }
+    }@else if $point == md { // -> (> 1280px && < 1366px)
+      @media only screen and (min-width: #{$bp__md}px) {
+        @content;
+      }
+    }@else if $point == lg { // -> (> 1280px && < 1366px)
+      @media only screen and (min-width: #{$bp__lg}px) {
+        @content;
+      }
+    }@else if $point == xl { // -> (> 1280px && < 1366px)
+      @media only screen and (min-width: #{$bp__xl}px) {
+        @content;
+      }
+    }@else if $point == xxl { // -> (> 1280px && < 1366px)
+      @media only screen and (min-width: #{$bp__xxl}px) {
+        @content;
+      }
+    }
+  }
+}
+
+@if $Bootstrap_4 == true {
+  // The Standard Bootstrap 4.x Breakpoints
+  /*@media all and (max-width: 1199px) { ... }
+  @media all and (max-width: 991px) { ... }
+  @media all and (max-width: 768px) { ... }
+  @media all and (max-width: 575px) { ... }*/
+}
+
