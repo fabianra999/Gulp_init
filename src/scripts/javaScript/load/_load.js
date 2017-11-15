@@ -1,3 +1,3 @@
 window.onload = function() {
-  // my function
+  // my function loader
 };
