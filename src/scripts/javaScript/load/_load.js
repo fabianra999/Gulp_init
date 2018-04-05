@@ -1,9 +1,14 @@
 /**
  * load
  */
-window.onload = function() {
-  // my function loader
-};
+
+document.addEventListener('DOMContentLoaded', function () {
+  (() => {
+    // my function loader
+  })();
+}, false);
+
+
 
 /**
  * exists
