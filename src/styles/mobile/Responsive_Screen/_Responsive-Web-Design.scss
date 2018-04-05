@@ -2,32 +2,46 @@
 *  Grid options Bootstrap 4
 *   Responsive Web Design
 *    (Desktop to Mobile)
-*     -> Extra small <576px = .col-
-*     -> Small ≥576px = .col-sm-
-*     -> Medium ≥768px = .col-md-
-*     -> Large ≥992px = .col-lg-
-*     -> Extra large ≥1200px = .col-xl-
+  *     -> Small <576px        = col
+  *     -> Medium ≥768px       = sm
+  *     -> Large ≥992px        = md
+  *     -> Extra large ≥1200px = lg
+  *     -> Standard ≥1366px    = xl
+  *     -> Standard ≥1920px    = xxl
 */
-@if $Mobile_First_Web_Design == true {
-  // -> Extra small <576px = .col-
-  @media only screen and (max-width: 576px) {
-    //yea
-  }
 
-  // -> Small ≥576px = .col-sm-
-  @media only screen and (min-width: 577px) and (max-width: 768px) {
+/**
+     *  Web responsive
+     *    => min-width and max-width
+     *    Media puntuales.
+     */
 
-  }
+@media only screen and (max-width: #{map_get($widthGrid, Small)}px) {}
 
-  // -> Medium ≥768px = .col-md-
-  @media only screen and (min-width: 769px) and (max-width: 992px) {
-  }
+@media only screen and (min-width: #{map_get($widthGrid, Small) + 1}px) and (max-width: #{map_get($widthGrid, Medium)}px) {}
 
-  // -> Large ≥992px = .col-lg-
-  @media only screen and (min-width: 993px) and (max-width: 1199px) {
-  }
+@media only screen and (min-width: #{map_get($widthGrid, Medium) + 1}px) and (max-width: #{map_get($widthGrid, Large)}px) {}
 
-  // > Extra large ≥1200px = .col-xl-
-  @media only screen and (min-width: 993px) {
-  }
-};
+@media only screen and (min-width: #{map_get($widthGrid, Large) + 1}px) and (max-width: #{map_get($widthGrid, ExtraLarge)}px) {}
+
+@media only screen and (min-width: #{map_get($widthGrid, ExtraLarge) + 1}px) and (max-width: #{map_get($widthGrid, standard)}px) {}
+
+@media only screen and (min-width: #{map_get($widthGrid, standard) + 1}px) and (max-width: #{map_get($widthGrid, standardLarge)}px) {}
+
+/**
+   *  Web responsive
+   *    => max-width
+   *    Media a partir de.
+   */
+
+@media only screen and (max-width: #{map_get($widthGrid, Small)}px) {}
+
+@media only screen and (max-width: #{map_get($widthGrid, Medium)}px) {}
+
+@media only screen and (max-width: #{map_get($widthGrid, Large)}px) {}
+
+@media only screen and (max-width: #{map_get($widthGrid, ExtraLarge)}px) {}
+
+@media only screen and (max-width: #{map_get($widthGrid, standard)}px) {}
+
+@media only screen and (max-width: #{map_get($widthGrid, standardLarge)}px) {}

@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "app.js": {
+      "files": ["scripts/javaScript/**/*.js"],
+      "main": true
+    }, 
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "tipeScript.js": {
+      "files": ["scripts/tipeScript/**/*.ts"],
+      "main": true
+    },
+    "fonts": {
+      "files": ["fonts/**/*"]
+    },
+    "images": {
+      "files": ["images/**/*"]
+    }
+  },
+  "paths": {
+    "source": "src/",
+    "dist": "dist/"
+  }
+}

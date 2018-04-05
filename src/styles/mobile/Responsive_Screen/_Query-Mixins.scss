@@ -1,165 +1,172 @@
 /**
-* Responsive
-* Adjustment from a maximum size
+   *  Grid options Bootstrap 4
+  *     -> Small <576px        = col
+  *     -> Medium ≥768px       = sm
+  *     -> Large ≥992px        = md
+  *     -> Extra large ≥1200px = lg
+  *     -> Standard ≥1366px    = xl
+  *     -> Standard ≥1920px    = xxl
+  *
+  *     => min-width and max-width  : bp(col);
+  *     => max-width                : bp(col-max);
+  *
+  *     => Orientation - landscape.
+  *          -> Mobile  : bp(mv-lan);
+  *          -> Table   : bp(tb-lan);
+  *          -> map_get($widthGrid, Medium) : bp(md-lan);
+  *
+  *     => Orientation - portrait.
+  *          -> Mobile  : bp(mv-por);
+  *          -> Table   : bp(tb-por);
+  *          -> map_get($widthGrid, Medium) : bp(md-por);
+  *
+  * Mode of use :
+  *  @include bp (sm) {
+  *    width: 100%;
+  *  }
+ */
 
-* Break Points
-    $bp__xs: 480;
-    $bp__sm: 768;
-    $bp__md: 992;
-    $bp__lg: 1200;
-    $bp__xl: 1366;
-    $bp__xxl: 1920;
+ @mixin bp($point) {
 
-* Method
-Method by segment (Mobile <=> Desktop)
-Mobile First Method
-Non-Mobile First Method
-
-* Mode of use :
-   .sidebar {
-    width: 33.33%;
-      @include bp (sm) {
-        width: 100%;
-      }
-   }
-*/
-
-
-/**
-* Method by segment
-*  Mobile <=> Desktop
-*  Break points by ranges
-**/
-@if $Break_Points_Ranges == true {
-  @mixin bp($point) {
-    $bp__xs: 480;
-    $bp__sm: 768;
-    $bp__md: 992;
-    $bp__lg: 1200;
-    $bp__xl: 1366;
-    $bp__xxl: 1920;
-
-    @if $point == xs { // -> (< 414px)
-      @media only screen and (max-width: #{$bp__xs}px){
+  @if map_get($responsive, responsiveWebDesing) == true {
+    /**
+     *  Web responsive
+     *    => min-width and max-width
+     *    Media puntuales.
+     */
+    @if $point == col {
+      @media only screen and (max-width: #{map_get($widthGrid, Small)}px) {
         @content;
       }
-    } @else if $point == sm { // -> (> 414px && < 768px)
-      @media only screen and (min-width: #{$bp__xs+1}px) and (max-width: #{$bp__sm}px) {
+    } @else if $point == sm {
+      @media only screen and (min-width: #{map_get($widthGrid, Small) + 1}px) and (max-width: #{map_get($widthGrid, Medium)}px) {
         @content;
       }
-    } @else if $point == md { // -> (> 768px && < 992px)
-      @media only screen and (min-width: #{$bp__sm + 1}px) and (max-width: #{$bp__md}px) {
+    } @else if $point == md {
+      @media only screen and (min-width: #{map_get($widthGrid, Medium) + 1}px) and (max-width: #{map_get($widthGrid, Large)}px) {
         @content;
       }
-    } @else if $point == lg { // -> (> 992px && < 1280px)
-      @media only screen and (min-width: #{$bp__md + 1}px) and (max-width: #{$bp__lg}px){
+    } @else if $point == lg {
+      @media only screen and (min-width: #{map_get($widthGrid, Large) + 1}px) and (max-width: #{map_get($widthGrid, ExtraLarge)}px) {
         @content;
       }
-    }@else if $point == lg { // -> (> 992px && < 1280px)
-      @media only screen and (min-width: #{$bp__lg + 1}px) and (max-width: #{$bp__xl}px){
+    } @else if $point == xl {
+      @media only screen and (min-width: #{map_get($widthGrid, ExtraLarge) + 1}px) and (max-width: #{map_get($widthGrid, standard)}px) {
         @content;
       }
-    }@else if $point == lg { // -> (> 992px && < 1280px)
-      @media only screen and (min-width: #{$bp__xl + 1}px) and (max-width: #{$bp__xxl}px){
+    } @else if $point == xxl {
+      @media only screen and (min-width: #{map_get($widthGrid, standard) + 1}px) and (max-width: #{map_get($widthGrid, standardLarge)}px) {
         @content;
       }
-    }@else if $point == xxl { // -> (> 1280px && < 1366px)
-      @media only screen and (min-width: #{$bp__lg + 1}px) {
+    }
+
+    /**
+     *  Web responsive
+     *    =>  max-width
+     *    Media puntuales.
+     */
+    /**
+   *  Web responsive
+   *    => max-width
+   *    Media a partir de.
+   */
+    @if $point == col-max {
+      @media only screen and (max-width: #{map_get($widthGrid, Small)}px) {
+        @content;
+      }
+    } @else if $point == sm-max {
+      @media only screen and (max-width: #{map_get($widthGrid, Medium)}px) {
+        @content;
+      }
+    } @else if $point == md-max {
+      @media only screen and (max-width: #{map_get($widthGrid, Large)}px) {
+        @content;
+      }
+    } @else if $point == lg-max {
+      @media only screen and (max-width: #{map_get($widthGrid, ExtraLarge)}px) {
+        @content;
+      }
+    } @else if $point == xl-max {
+      @media only screen and (max-width: #{map_get($widthGrid, standard)}px) {
+        @content;
+      }
+    } @else if $point == xxl-max {
+      @media only screen and (max-width: #{map_get($widthGrid, standardLarge)}px) {
         @content;
       }
     }
   }
-}
 
-/**
-* Non-Mobile First Method
-*  Desktop > Mobile
-**/
-@if $Non-Mobile_First_Method == true {
-  @mixin bpd($point) {
-    $bp__xs: 480;
-    $bp__sm: 768;
-    $bp__md: 992;
-    $bp__lg: 1200;
-    $bp__xl: 1366;
-    $bp__xxl: 1920;
+  @if map_get($responsive, mobileFirst) == true {
 
+    @if $point == col {
+      @media only screen and (min-width: #{map_get($widthGrid, Small)}px) {
+        @content;
+      }
+    } @else if $point == sm {
+      @media only screen and (min-width: #{map_get($widthGrid, Medium)}px) {
+        @content;
+      }
+    } @else if $point == md {
+      @media only screen and (min-width: #{map_get($widthGrid, Large)}px) {
+        @content;
+      }
+    } @else if $point == lg {
+      @media only screen and (min-width: #{map_get($widthGrid, ExtraLarge)}px) {
+        @content;
+      }
+    } @else if $point == xl {
+      @media only screen and (min-width: #{map_get($widthGrid, standard)}px) {
+        @content;
+      }
+    } @else if $point == xxl {
+      @media only screen and (min-width: #{map_get($widthGrid, standardLarge)}px) {
+        @content;
+      }
+    }
 
-    @if $point == xs { // -> (< 414px)
-      @media only screen and (max-width: #{$bp__xs}px){
+  }
+
+  @if map_get($responsive, orientation) == true {
+    /**
+     *  Orientation.
+     *    => landscape.
+     *    => min-width and max-width
+     *    solo si la pantalla esta en formato horizontal
+     */
+    @if $point == mv-lan {
+      @media only screen and (max-width: #{map_get($widthGrid, Small)}px) and (orientation: landscape) {
         @content;
       }
-    }@else if $point == sm { // -> (> 1280px && < 1366px)
-      @media only screen and (max-width: #{$bp__sm}px) {
+    } @else if $point == tb-lan {
+      @media only screen and (min-width: #{map_get($widthGrid, Small) + 1}px) and (max-width: #{map_get($widthGrid, Medium)}px) and (orientation: landscape) {
         @content;
       }
-    }@else if $point == md { // -> (> 1280px && < 1366px)
-      @media only screen and (max-width: #{$bp__md}px) {
+    } @else if $point == md-lan {
+      @media only screen and (max-width: #{map_get($widthGrid, Medium)}px) and (orientation: landscape) {
         @content;
       }
-    }@else if $point == lg { // -> (> 1280px && < 1366px)
-      @media only screen and (max-width: #{$bp__lg}px) {
+    }
+
+    /**
+     *  Orientation.
+     *    => portrait.
+     *    => min-width and max-width
+     *    solo si la pantalla esta en formato vertical
+     */
+    @if $point == mv-por {
+      @media only screen and (max-width: #{map_get($widthGrid, Small)}px) and (orientation: portrait) {
         @content;
       }
-    }@else if $point == xl { // -> (> 1280px && < 1366px)
-      @media only screen and (max-width: #{$bp__xl}px) {
+    } @else if $point == tb-por {
+      @media only screen and (min-width: #{map_get($widthGrid, Small) + 1}px) and (max-width: #{map_get($widthGrid, Medium)}px) and (orientation: portrait) {
         @content;
       }
-    }@else if $point == xxl { // -> (> 1280px && < 1366px)
-      @media only screen and (min-width: #{$bp__xxl}px) {
+    } @else if $point == md-por {
+      @media only screen and (max-width: #{map_get($widthGrid, Medium)}px) and (orientation: portrait) {
         @content;
       }
     }
   }
+
 }
-
-/**
-* Mobile First Method
-*  Mobile > Desktop
-**/
-@if $Mobile_First_Method == true {
-  @mixin bpm($point) {
-    $bp__xs: 480;
-    $bp__sm: 768;
-    $bp__md: 992;
-    $bp__lg: 1200;
-    $bp__xl: 1366;
-    $bp__xxl: 1920;
-
-
-    @if $point == xs { // -> (< 414px)
-      @media only screen and (min-width: #{$bp__xs}px){
-        @content;
-      }
-    }@else if $point == sm { // -> (> 1280px && < 1366px)
-      @media only screen and (min-width: #{$bp__sm}px) {
-        @content;
-      }
-    }@else if $point == md { // -> (> 1280px && < 1366px)
-      @media only screen and (min-width: #{$bp__md}px) {
-        @content;
-      }
-    }@else if $point == lg { // -> (> 1280px && < 1366px)
-      @media only screen and (min-width: #{$bp__lg}px) {
-        @content;
-      }
-    }@else if $point == xl { // -> (> 1280px && < 1366px)
-      @media only screen and (min-width: #{$bp__xl}px) {
-        @content;
-      }
-    }@else if $point == xxl { // -> (> 1280px && < 1366px)
-      @media only screen and (min-width: #{$bp__xxl}px) {
-        @content;
-      }
-    }
-  }
-}
-
-@if $Bootstrap_4 == true {
-  // The Standard Bootstrap 4.x Breakpoints
-  /*@media all and (max-width: 1199px) { ... }
-  @media all and (max-width: 991px) { ... }
-  @media all and (max-width: 768px) { ... }
-  @media all and (max-width: 575px) { ... }*/
-}
-

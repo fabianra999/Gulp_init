@@ -1,27 +1,39 @@
 /**
 * Responsive Screen
-*  config screen.scss
-*
 * --> Responsive Web Design <--
 *     Mobile First Web Design
 *
+* Select the type of Responsive.
 */
 
+$responsive: (
+     responsiveWebDesing: true, 
+     mobileFirst: false,
+     orientation: true
+     );
+
 /****** Responsive Web Design  ******/
-@import 'Responsive_Screen/Responsive-Web-Design';
+@if $responsiveWebDesing==true {
+    @import 'Responsive_Screen/Responsive-Web-Design';
+}
+
 
 /****** Mobile First Web Design  ******/
-@import 'Responsive_Screen/Mobile-First-Web-Design';
+@if $mobileFirst==true {
+    @import 'Responsive_Screen/Mobile-First-Web-Design';
+}
+
 
 /****** Query-Mixins  ******/
 @import 'Responsive_Screen/Query-Mixins';
 
-/*==============================================================================================================================*/
 
-/**
-* Responsive
-* Import Files Mobiles
-* Mixin -> Adjustment from a maximum size
-*/
-//@import 'layouts/m-home';
-//@import 'components/m-header';
+/****** Grid options Bootstrap 4  ******/
+$widthGrid: ( 
+    Small: 576,
+    Medium: 768, 
+    Large: 992, 
+    ExtraLarge: 1200, 
+    standard: 1366, 
+    standardLarge: 1920
+    );
