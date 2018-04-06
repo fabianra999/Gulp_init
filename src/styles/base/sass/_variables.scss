@@ -1,0 +1,59 @@
+// $varables: valor; 
+// - tyene scout 
+// - Interpolacion: saca hijo del padre  @at-root p{color: $tomato_1;}
+
+//               Ejempl0:
+// $var: 2;
+// $company: youtube;
+
+// .div-#{$company}:nth-child(#{$var}){
+//  background: red;
+//  &::before {
+//    content: "Bienvenido a #{$company}";
+//  }
+// }
+
+/* Varables Colores
+===================================================*/
+
+//colores
+$rojo: #932e30;
+$azul: #2e8b9b;
+$verde: #a3bd31;
+$naranja: #d37c32;
+$amarillo: #F29100;
+$blanco: #ffffff;
+$negro: #000000;
+$gris: #4c4c4c;
+
+$whatsapp: #65a445;
+$facebook: #253a81;
+$instagram: #38619f;
+$mail: #2e8b9b;
+
+$colors: (
+        t-red: #932e30,
+        t-blue: #2e8b9b,
+        t-green: #a3bd31,
+        t-orange: #d37c32,
+        t-yellow: #F29100,
+        t-white: #ffffff,
+        t-black: #000000,
+        t-grey: #4c4c4c,
+        t-grey2: #495057,
+        whatsapp: #65a445,
+        facebook: #253a81,
+        instagram: #38619f,
+        mail: #2e8b9b
+);
+
+$loader: (
+        odd: map_get($colors, t-orange),
+        even: map_get($colors, t-blue)
+);
+
+/* Path Sass
+===================================================*/
+$path-fonts: '../../components/fonts/';
+$path-img: '../images';
+

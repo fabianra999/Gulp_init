@@ -1,0 +1,93 @@
+/*====== text overflow ======*/
+.tx-overflow, %tx-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*====== font color ======*/
+.fc-red, %fc-red {
+  color: map_get($colors, t-red);
+}
+.fc-blue, %fc-blue {
+  color: map_get($colors, t-blue);
+}
+.fc-green, %fc-green {
+  color: map_get($colors, t-green);
+}
+.fc-orange, %fc-orange {
+  color: map_get($colors, t-orange);
+}
+.fc-yellow, %fc-yellow {
+  color: map_get($colors, t-yellow);
+}
+.fc-white, %fc-white {
+  color: map_get($colors, t-white);
+}
+.fc-black, %fc-black {
+  color: map_get($colors, t-black);
+}
+.fc-grey, %fc-grey {
+  color: map_get($colors, t-grey);
+}
+.fc-grey2, %fc-grey2 {
+  color: map_get($colors, t-grey2);
+}
+
+
+
+/*====== font weight ======*/
+.fw-xs, %fw-xs {
+  font-weight: 300;
+}
+
+.fw-sm, %fw-sm {
+  font-weight: 500;
+}
+
+.fw-md, %fw-md {
+  font-weight: 700;
+}
+
+.fw-lg, %fw-lg {
+  font-weight: 900;
+}
+
+.fw-b, %fw-b {
+  font-weight: bold;
+}
+
+/*====== font size ======*/
+.fs-xs, %fs-xs {
+  font-size: 1.3rem;
+}
+
+.fs-sm, %fs-sm {
+  font-size: 2.3rem;
+}
+
+.fs-md, %fs-md {
+  font-size: 3rem;
+}
+
+.fs-lg, %fs-lg {
+  font-size: 3.3em;
+}
+
+/*====== font align ======*/
+.ta-c, %ta-c {
+  text-align: center;
+}
+
+.ta-l, %ta-l {
+  text-align: left;
+}
+
+.ta-r, %ta-r {
+  text-align: right;
+}
+
+/*====== font transform ======*/
+.tt-up, %tt-up {
+  text-transform: uppercase;
+}

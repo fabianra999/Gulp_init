@@ -1,42 +1,45 @@
-/****** Media Query******/
-$Responsive_Web_Design:       true;
-$Mobile_First_Web_Design:    false;
+/**
+  / ___/_____________  ___  ____
+  \__ \/ ___/ ___/ _ \/ _ \/ __ \
+ ___/ / /__/ /  /  __/  __/ / / /
+/____/\___/_/   \___/\___/_/ /_/
 
-/****** Media Query******/
-$Break_Points_Ranges:         true;
-$Mobile_First_Method:        false;
-$Non-Mobile_First_Method:     true;
-$Bootstrap_4:                 true;
+ -Media Query -Components -Base -Modules -Theme -Layouts
+**/
 
+/**
+****** Responsive Web ******
+*
+* --> Responsive Web Design <--
+*     Mobile First Web Design
+*/
+$responsive: (
+     responsiveWebDesing: true, 
+     mobileFirst: false,
+     orientation: true,
+     print: false
+     );
+
+/****** Path Dis Sass ******/
+$path-fonts: '../../components/fonts/';
+$path-img: '../images/png';
 
 /****** Base ******/
-@import 'base/variables';
-@import 'base/placeholder';
-@import 'base/mixin';
-@import 'base/funciones';
-@import 'base/iteraciones';
-@import 'base/condicionales';
 @import 'base/global';
-@import 'base/customBootstrap';
 
+/****** Theme ******/
+//@import 'theme/';
 
 /****** Modules ******/
 @import 'modules/header';
 @import 'modules/nav';
 @import 'modules/footer';
 
-
-/****** Theme ******/
-//@import 'theme/';
-
-
 /****** Layouts ******/
 @import 'layouts/home';
 
-
 /****** State ******/
 //@import 'state/';
-
 
 /****** Mobile ******/
 @import 'mobile/m-screen';

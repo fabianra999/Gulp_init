@@ -4,11 +4,17 @@
 /* 1. Function px a em
 ===================================================*/
 
-@function rem($elementoRem,$padreRem:16px){
-	$rem: ($elementoRem / $padreRem) * 1rem;
-	@return $rem;
-}
+@function rem($pixels, $context:16px) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
 
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1rem;
+}
 
 /* 2. Image path (ruta a las imagenes)
 ===================================================*/

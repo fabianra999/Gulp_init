@@ -1,9 +1,0 @@
-// %placeholder{ color: red;}  - llamado @extend %placeholder  'no se procesa se llaman sus componentes'
-
-/* Placeholder
-===================================================*/
-%placeholder-test{ color: red;} 
-
-.placeholder-test{
-  @extend %placeholder-test;
-}

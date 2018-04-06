@@ -2,14 +2,15 @@
 * Estilos Impresion
 **/
 
-@media print{
-  /**
+@if map-get($responsive, print ){
+  @media print {
+    /**
   * Estilos Globales
   **/
-  @import 'base/p-global';
-  /**
+    @import 'base/p-global';
+    /**
   * Estilos Layouts
   **/
-  //@import 'layout/p-layout';
-  color: $verde;
+    //@import 'layout/p-layout';
+  }
 }

@@ -1,254 +1,41 @@
-// Global CSS goes here
+/**
+ * Global.
+ *
+ *  => @extend %class-test; -> silent classes = placeholder
+ *  => @extend .class-test;
+ */
+
+
+/*====== Sass ======*/
+@import "sass/variables";
+@import "sass/mixin";
+@import "sass/iteraciones";
+@import "sass/funciones";
+@import "sass/condicionales";
+
+/*====== Global ======*/
+@import "global/scroll";
+@import "global/font";
+@import "global/font-face";
+@import "global/customBootstrap";
+
+/*====== Components ======*/
+@import "components/icons";
 
 /*====== body ======*/
-*, 
-*::after,
-*::before{
-  box-sizing: inherit;
-}
-html{
-  /* box model
-  ============================================================*/
-  box-sizing: border-box;
-
-  /* Scroll css
-  ============================================================*/
-  scrollbar {
-    width: 8px;
-    height: 10px;
-  }
-
-  scrollbar-button {
-    width: 8px;
-    height: 5px;
-  }
-
-  // btn scroll
-  scrollbar-thumb {
-    background: claro($gris, 40%);
-    border: 71px none $blanco;
-    border-radius: 31px;
-  }
-
-  scrollbar-thumb:hover {
-    background: $gris;
-  }
-
-  scrollbar-thumb:active {
-    background: $gris;
-  }
-
-  // barra scroll
-  scrollbar-track {
-    background: $gris;
-    width: 2px;
-    border:  3px solid $blanco;
-    border-radius: 34px;
-  }
-
-  scrollbar-track:hover {
-    background: claro($gris, 40%);
-  }
-
-  scrollbar-track:active {
-    background: claro($gris, 40%);
-  }
-
-  scrollbar-corner {
-
-  }
-
-
-  //webkit
-
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 10px;
-  }
-
-  ::-webkit-scrollbar-button {
-    width: 8px;
-    height: 5px;
-  }
-
-  // btn scroll
-  ::-webkit-scrollbar-thumb {
-    background: claro($gris, 40%);
-    border: 71px none $blanco;
-    border-radius: 31px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: $gris;
-  }
-
-  ::-webkit-scrollbar-thumb:active {
-    background: $gris;
-  }
-
-  // barra scroll
-  ::-webkit-scrollbar-track {
-    background: $gris;
-    width: 2px;
-    border:  3px solid $blanco;
-    border-radius: 34px;
-  }
-
-  ::-webkit-scrollbar-track:hover {
-    background: claro($gris, 40%);
-  }
-
-  ::-webkit-scrollbar-track:active {
-    background: claro($gris, 40%);
-  }
-
-  ::-webkit-scrollbar-corner {
-
-  }
-}
-body{
-
-}
-
-/*====== font color ======*/
-.fc-blanco{
-  color: $blanco;
-}
-.fc-gris{
-  color: $gris;
-}
-.fc-azul{
-  color: $azul;
-}
-.fc-am{
-  color: $amarillo;
-}
-
-/*====== font weight ======*/
-.fw-xs{
-  font-weight: 300;
-}
-.fw-sm{
-  font-weight: 500;
-}
-.fw-md{
-  font-weight: 700;
-}
-.fw-lg{
-  font-weight: 900;
-}
-.fw-b{
-  font-weight: bold;
-}
-
-/*====== font size ======*/
-.fs-xs{
-  font-size: 1.3rem;
-}
-.fs-sm{
-  font-size: 2.3rem;
-}
-.fs-md{
-  font-size: 3rem;
-}
-.fs-lg{
-  font-size: 3.3em;
-}
-
-/*====== font align ======*/
-.ta-c{
-  text-align: center;
-}
-.ta-l{
-  text-align: left;
-}
-.ta-r{
-  text-align: right;
-}
-
-/*====== font transform ======*/
-.tt-up{
-  text-transform: uppercase;
-}
-
-/*====== font transform ======*/
-.padding{
-  padding: 1rem;
-}
-
-/*====== font family ======*/
+@import "global/body";
 
 
 
-/*====== text overflow ======*/
-.tx-overflow{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/*====== floar none ======*/
-.floadNone{
-  float: inherit;
-  //	.clearfix();
-}
-
-/*====== text overflow ======*/
-.spans{
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0px;
-}
-
-/**
-* input
-*    input format webkit (fondo amarillo)
-*/
-input {
-  &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
-  }
-}
 
 
 
-/**
-* Text HoverFlow
-*/
 
-.tx-h{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: inherit;
-}
 
-/**
-* space
-*    class => sp-
-*/
-[class^="sp-"] {
-  display: block;
-  font-size: 0;
-  line-height: 0;
-}
 
-.sp-1 {
-  padding: 1rem 0;
-}
 
-.sp-2 {
-  padding: 1.5rem 0;
-}
 
-.sp-3 {
-  padding: 2rem 0;
-}
 
-.sp-4 {
-  padding: 2.5rem 0;
-}
 
-.sp-5 {
-  padding: 3rem 0;
-}
+
+
