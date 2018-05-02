@@ -3,7 +3,7 @@
  *        Dispocitivos moviles
  */
 function mobileDetecting() {
-  var bodyTag = document.getElementsByTagName("body")[0];
+  let bodyTag = document.getElementsByTagName("body")[0];
 
   var isMobile = {
     Android: function () {
@@ -34,27 +34,27 @@ function mobileDetecting() {
 
   // Es movil
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    $('body').addClass('mobile');
+      bodyTag.classList.add('mobile');
   }
 
   // Es ios
   if (isMobile.iOS()) {
-    $('body').addClass('iOS');
+      bodyTag.classList.add('iOS');
   }
 
   // tipo de movil
   if (isMobile.Android()) {
-    $('body').addClass('Android');
+      bodyTag.classList.add('Android');
   } else if (isMobile.BlackBerry()) {
-    $('body').addClass('BlackBerry');
+      bodyTag.classList.add('BlackBerry');
   } else if (isMobile.ipad()) {
-    $('body').addClass('ipad');
+      bodyTag.classList.add('ipad');
   } else if (isMobile.iPhone()) {
-    $('body').addClass('iPhone');
+      bodyTag.classList.add('iPhone');
   } else if (isMobile.Opera()) {
-    $('body').addClass('Opera');
+      bodyTag.classList.add('Opera');
   } else if (isMobile.Windows()) {
-    $('body').addClass('Windows');
+      bodyTag.classList.add('Windows');
   }
-
+  
 }

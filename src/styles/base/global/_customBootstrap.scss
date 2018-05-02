@@ -1,8 +1,8 @@
 // center col
-.row-center{
+.row-center {
 	display: table;
 	height: 100%;
-	> div{
+	>div {
 		display: table-cell;
 		vertical-align: middle;
 		float: none;
@@ -13,15 +13,39 @@
 .container-horizontal preferible poner en .row &&  .col-horizontal en la col col-xs-6.
 mayor problema por fload superior.
 */
-.container-horizontal{
+
+.container-horizontal {
 	display: block;
 	overflow-x: auto;
 	overflow-y: hidden;
-	white-space:nowrap;
-	.col-horizontal{
+	white-space: nowrap;
+	.col-horizontal {
 		cursor: pointer;
 		display: inline-block;
 		vertical-align: top;
 		float: inherit;
 	}
+}
+
+/**
+* Parallax
+* 	=> min height
+**/
+
+.parallaxBg,
+%parallaxBg {
+	background-attachment: fixed !important;
+	background-size: cover !important;
+	background-position: 50% 50% !important;
+}
+
+/**
+* Nav fixed
+**/
+
+.fixed-nav {
+	position: fixed !important;
+	width: 100%;
+	top: 0;
+	z-index: 1;
 }
