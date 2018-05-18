@@ -1,87 +1,95 @@
-/**
-* mediaQueryJs
-* - Tamaño mediasQuery´s de bootstrap 4.
-* - function resize and onload.
-* - Funcion auto ejecutable.
-**/
+function mobileMediaQuery() {
 
-( mediaQueryJs => {
+    const mediaQueryInfo = {
+        xs: matchMedia("(max-width: 576px)"),
+        sm: matchMedia("(min-width: 577px) and (max-width: 768px)"),
+        md: matchMedia("(min-width: 769px) and (max-width: 991px)"),
+        lg: matchMedia("(min-width: 992px) and (max-width: 1200px)"),
+        xl: matchMedia("(min-width: 1201px)"),
+        iPad: matchMedia("(min-width: 577px) and (max-width: 1024px)")
 
-  // mediaQuery -> Tamaños
-  const mediaQuery = [
-    matchMedia('(max-width: 576px)'),
-    matchMedia('(min-width: 577px) and (max-width: 768px)'),
-    matchMedia('(min-width: 769px) and (max-width: 992px)'),
-    matchMedia('(min-width: 993px)'),
-  ];
+    };
+    const bodySelector = document.querySelectorAll('body')[0];
 
 
-  // Dondicional por mediaQuery
-  const changeSize = function (){
-    if (mediaQuery[0].matches){
-      //console.log('1 sm');
-      //document.body.style.background = 'red'
-
+    /*
+     *  Mobile Class
+     *   => Toggle Class: ***
+     * */
+    if (mediaQueryInfo.xs.matches) {
+        if (document.querySelector('.sizes__xs') === null) {
+            bodySelector.classList.add('sizes__xs');
+        } else {
+            for (let value of bodySelectorInfo) {
+                if (value === 'sizes__sm' || value === 'sizes__md' || value === 'sizes__lg' || value === 'sizes__xl') {
+                    bodySelector.classList.remove(value);
+                }
+            }
+        }
+    } else if (mediaQueryInfo.sm.matches) {
+        if (document.querySelector('.sizes__sm') === null) {
+            bodySelector.classList.add('sizes__sm');
+        } else {
+            for (let value of bodySelectorInfo) {
+                if (value === 'sizes__xs' || value === 'sizes__md' || value === 'sizes__lg' || value === 'sizes__xl') {
+                    bodySelector.classList.remove(value);
+                }
+            }
+        }
+    } else if (mediaQueryInfo.md.matches) {
+        if (document.querySelector('.sizes__md') === null) {
+            bodySelector.classList.add('sizes__md');
+        } else {
+            for (let value of bodySelectorInfo) {
+                if (value === 'sizes__xs' || value === 'sizes__sm' || value === 'sizes__lg' || value === 'sizes__xl') {
+                    bodySelector.classList.remove(value);
+                }
+            }
+        }
+    } else if (mediaQueryInfo.lg.matches) {
+        if (document.querySelector('.sizes__lg') === null) {
+            bodySelector.classList.add('sizes__lg');
+        } else {
+            for (let value of bodySelectorInfo) {
+                if (value === 'sizes__xs' || value === 'sizes__md' || value === 'sizes__sm' || value === 'sizes__xl') {
+                    bodySelector.classList.remove(value);
+                }
+            }
+        }
+    } else if (mediaQueryInfo.xl.matches) {
+        if (document.querySelector('.sizes__xl') === null) {
+            bodySelector.classList.add('sizes__xl');
+        } else {
+            for (let value of bodySelectorInfo) {
+                if (value === 'sizes__xs' || value === 'sizes__md' || value === 'sizes__lg' || value === 'sizes__sm') {
+                    bodySelector.classList.remove(value);
+                }
+            }
+        }
     }
-    if (mediaQuery[1].matches) {
-      //console.log('2 md');
-      //document.body.style.background = 'blue'
 
+    /*
+     *  Mobile menu
+     *   => Toggle Class: mobileMenu
+     * */
+    if (mediaQueryInfo.mobileNav.matches) {
+        if (document.querySelector('.mobileMenu') === null) {
+            bodySelector.classList.add('mobileMenu');
+        }
+    } else {
+        bodySelector.classList.remove('mobileMenu');
     }
-    if (mediaQuery[2].matches) {
-      //console.log('3 lg');
-      //document.body.style.background = 'tomato'
 
+    /*
+     *  iPat Land Scape
+     *   => Toggle Class: iPadLandscape
+     * */
+    if (mediaQueryInfo.iPad.matches) {
+        bodySelector.classList.toggle('iPadLandscape');
     }
-    if (mediaQuery[3].matches) {
-      //console.log('4 xl');
-      //document.body.style.background = 'green'
 
-    }
-  }
 
-  let key_1 = 0;
-  for (let mediaQuerys of mediaQuery) {
-    //console.log(key_1);
-    //console.log(mediaQuerys);
-    // console.log('q es:', mediaQuery[0].matches);
-
-    mediaQuery[key_1].addListener(changeSize);
-    changeSize(mediaQuery[key_1]);
-
-    key_1++;
-  }
-})();
-
-/**
- *  mediaQueryJs b4 (estrictas)
- *
- **/
-function mediaQueryEsJs() {
-  // mediaQuery -> Tamaños
-  const mediaQuery = [
-    matchMedia('(max-width: 576px)'),
-    matchMedia('(min-width: 577px) and (max-width: 768px)'),
-    matchMedia('(min-width: 769px) and (max-width: 992px)'),
-    matchMedia('(min-width: 993px)'),
-  ];
-
-  if (mediaQuery[0].matches) { // -> sm
-    //console.log('1 sm');
-
-  } else if (mediaQuery[1].matches) { // -> md
-    //console.log('2 md');
-
-  } else if (mediaQuery[2].matches) { // -> lg
-    //console.log('3 lg');
-
-  } else (mediaQuery[3].matches) // -> xl
-  {
-    //console.log('4 xl');
-
-  }
-
-};
+}
 
 
 /**
@@ -89,7 +97,18 @@ function mediaQueryEsJs() {
  * Resize mediaQuery
  **/
 
-window.addEventListener("resize", () => {
-  //console.log('Hola Resize');
+window.addEventListener("resize", function() {
+    mobileMediaQuery();
 });
 
+
+/**
+ * Funcion Ready
+ **/
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+
+        mobileMediaQuery();
+
+    }, 1500);
+}, false);

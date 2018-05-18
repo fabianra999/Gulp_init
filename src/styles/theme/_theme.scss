@@ -36,8 +36,7 @@
 */
 
 @mixin themCustom($themes) {
-    @each $theme,
-    $map in $themes {
+    @each $theme, $map in $themes {
         .theme-#{$theme} & {
             $theme-map: () !global;
             @each $key,
