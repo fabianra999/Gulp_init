@@ -1,17 +1,46 @@
 @charset "UTF-8";
-/****** Media Query******/
-/****** Media Query******/
+/**
+  / ___/_____________  ___  ____
+  \__ \/ ___/ ___/ _ \/ _ \/ __ \
+ ___/ / /__/ /  /  __/  __/ / / /
+/____/\___/_/   \___/\___/_/ /_/
+
+ -Media Query -Components -Base -Modules -Theme -Layouts
+**/
+/**
+****** Responsive Web ******
+*
+* --> Responsive Web Design <--
+*     Mobile First Web Design
+*/
+/****** Path Dis Sass ******/
 /****** Base ******/
+/**
+ * Global.
+ *
+ *  => @extend %class-test; -> (add in css ",") = placeholder
+ *  => @extend .class-test; -> (import styles in class)
+ */
+/*====== Sass ======*/
 /* Varables Colores
 ===================================================*/
 /* Path Sass
 ===================================================*/
-/*=== font-awesome ===*/
-/* Placeholder
-===================================================*/
-.placeholder-test {
-  color: red; }
-
+/**
+ Themes Web.
+   => Define the theme on the map $themes.
+   => Class for the theme theme-$themes.key in body.
+   => Use of the theme:
+     //@include themCustom($themes) {
+        background-color: themed('backgroundColor');
+      }
+ */
+/*
+ * Theme definitions
+ */
+/*
+ * Implementation of themes
+ */
 .test-mixin {
   display: 1em;
   line-height: 12px;
@@ -33,87 +62,111 @@
 ===================================================*/
 /* 2. colores
 ===================================================*/
-/*====== body ======*/
-*,
-*::after,
-*::before {
-  -webkit-box-sizing: inherit;
-     -moz-box-sizing: inherit;
-          box-sizing: inherit; }
+/*====== Global ======*/
+/* Scroll css
+ ============================================================*/
+html scrollbar {
+  width: 8px;
+  height: 10px; }
 
-html {
-  /* box model
-  ============================================================*/
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  /* Scroll css
-  ============================================================*/ }
-  html scrollbar {
-    width: 8px;
-    height: 10px; }
-  html scrollbar-button {
-    width: 8px;
-    height: 5px; }
-  html scrollbar-thumb {
-    background: #b2b2b2;
-    border: 71px none #ffffff;
-    -webkit-border-radius: 31px;
-       -moz-border-radius: 31px;
-            border-radius: 31px; }
-  html scrollbar-thumb:hover {
-    background: #4c4c4c; }
-  html scrollbar-thumb:active {
-    background: #4c4c4c; }
-  html scrollbar-track {
-    background: #4c4c4c;
-    width: 2px;
-    border: 3px solid #ffffff;
-    -webkit-border-radius: 34px;
-       -moz-border-radius: 34px;
-            border-radius: 34px; }
-  html scrollbar-track:hover {
-    background: #b2b2b2; }
-  html scrollbar-track:active {
-    background: #b2b2b2; }
-  html ::-webkit-scrollbar {
-    width: 8px;
-    height: 10px; }
-  html ::-webkit-scrollbar-button {
-    width: 8px;
-    height: 5px; }
-  html ::-webkit-scrollbar-thumb {
-    background: #b2b2b2;
-    border: 71px none #ffffff;
-    -webkit-border-radius: 31px;
-            border-radius: 31px; }
-  html ::-webkit-scrollbar-thumb:hover {
-    background: #4c4c4c; }
-  html ::-webkit-scrollbar-thumb:active {
-    background: #4c4c4c; }
-  html ::-webkit-scrollbar-track {
-    background: #4c4c4c;
-    width: 2px;
-    border: 3px solid #ffffff;
-    -webkit-border-radius: 34px;
-            border-radius: 34px; }
-  html ::-webkit-scrollbar-track:hover {
-    background: #b2b2b2; }
-  html ::-webkit-scrollbar-track:active {
-    background: #b2b2b2; }
+html scrollbar-button {
+  width: 8px;
+  height: 5px; }
+
+html scrollbar-thumb {
+  background: #999999;
+  border: 71px none #ffffff;
+  -webkit-border-radius: 31px;
+     -moz-border-radius: 31px;
+          border-radius: 31px; }
+
+html scrollbar-thumb:hover {
+  background: #333333; }
+
+html scrollbar-thumb:active {
+  background: #333333; }
+
+html scrollbar-track {
+  background: #333333;
+  width: 2px;
+  border: 3px solid #ffffff;
+  -webkit-border-radius: 34px;
+     -moz-border-radius: 34px;
+          border-radius: 34px; }
+
+html scrollbar-track:hover {
+  background: #999999; }
+
+html scrollbar-track:active {
+  background: #999999; }
+
+html ::-webkit-scrollbar {
+  width: 8px;
+  height: 10px; }
+
+html ::-webkit-scrollbar-button {
+  width: 8px;
+  height: 5px; }
+
+html ::-webkit-scrollbar-thumb {
+  background: #999999;
+  border: 71px none #ffffff;
+  -webkit-border-radius: 31px;
+          border-radius: 31px; }
+
+html ::-webkit-scrollbar-thumb:hover {
+  background: #333333; }
+
+html ::-webkit-scrollbar-thumb:active {
+  background: #333333; }
+
+html ::-webkit-scrollbar-track {
+  background: #333333;
+  width: 2px;
+  border: 3px solid #ffffff;
+  -webkit-border-radius: 34px;
+          border-radius: 34px; }
+
+html ::-webkit-scrollbar-track:hover {
+  background: #999999; }
+
+html ::-webkit-scrollbar-track:active {
+  background: #999999; }
+
+/*====== text overflow ======*/
+.tx-overflow {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap; }
 
 /*====== font color ======*/
-.fc-blanco {
-  color: #ffffff; }
+.fc-red {
+  color: #932e30; }
 
-.fc-gris {
-  color: #4c4c4c; }
-
-.fc-azul {
+.fc-blue {
   color: #2e8b9b; }
 
-.fc-am {
+.fc-green {
+  color: #a3bd31; }
+
+.fc-orange {
+  color: #d37c32; }
+
+.fc-yellow {
   color: #F29100; }
+
+.fc-white {
+  color: #ffffff; }
+
+.fc-black {
+  color: #000000; }
+
+.fc-grey {
+  color: #333333; }
+
+.fc-grey2 {
+  color: #495057; }
 
 /*====== font weight ======*/
 .fw-xs {
@@ -158,69 +211,6 @@ html {
 .tt-up {
   text-transform: uppercase; }
 
-/*====== font transform ======*/
-.padding {
-  padding: 1rem; }
-
-/*====== font family ======*/
-/*====== text overflow ======*/
-.tx-overflow {
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
-  white-space: nowrap; }
-
-/*====== floar none ======*/
-.floadNone {
-  float: inherit; }
-
-/*====== text overflow ======*/
-.spans {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0px; }
-
-/**
-* input
-*    input format webkit (fondo amarillo)
-*/
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset !important; }
-
-/**
-* Text HoverFlow
-*/
-.tx-h {
-  white-space: nowrap;
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
-  line-height: inherit; }
-
-/**
-* space
-*    class => sp-
-*/
-[class^="sp-"] {
-  display: block;
-  font-size: 0;
-  line-height: 0; }
-
-.sp-1 {
-  padding: 1rem 0; }
-
-.sp-2 {
-  padding: 1.5rem 0; }
-
-.sp-3 {
-  padding: 2rem 0; }
-
-.sp-4 {
-  padding: 2.5rem 0; }
-
-.sp-5 {
-  padding: 3rem 0; }
-
 .row-center {
   display: table;
   height: 100%; }
@@ -244,6 +234,35 @@ mayor problema por fload superior.
     vertical-align: top;
     float: inherit; }
 
+/**
+* Parallax
+* 	=> min height
+**/
+.parallaxBg {
+  background-attachment: fixed !important;
+  -moz-background-size: cover !important;
+       background-size: cover !important;
+  background-position: 50% 50% !important; }
+
+/**
+* Nav fixed
+**/
+.fixed-nav {
+  position: fixed !important;
+  width: 100%;
+  top: 0;
+  z-index: 1; }
+
+/*====== Components ======*/
+/*====== body ======*/
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit; }
+
+/****** Theme ******/
 /****** Modules ******/
 ul {
   margin: 0;
@@ -251,110 +270,178 @@ ul {
   ul li {
     display: inline-block; }
 
-/****** Theme ******/
 /****** Layouts ******/
+body {
+  margin: 0; }
+
+html,
+body {
+  height: 100%; }
+
+#app-root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  #app-root > div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+       -moz-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.app-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .app-container .title {
+    font-family: sans-serif;
+    font-weight: lighter; }
+  .theme-light .app-container {
+    color: #00919f;
+    background-color: #ffffff; }
+  .theme-dark .app-container {
+    color: #e7792b;
+    background-color: #ffffff; }
+  .app-container .button {
+    max-width: 20em;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    padding: 15px 32px;
+    display: inline-block;
+    -webkit-transition: color 0.1s, border-color 0.1s, background-color 0.1s;
+    -o-transition: color 0.1s, border-color 0.1s, background-color 0.1s;
+    -moz-transition: color 0.1s, border-color 0.1s, background-color 0.1s;
+    transition: color 0.1s, border-color 0.1s, background-color 0.1s; }
+    .theme-light .app-container .button {
+      border: 2px solid #00919f;
+      color: #00919f;
+      border-color: #00919f;
+      background-color: #fff;
+      text-transform: none; }
+      .theme-light .app-container .button:hover {
+        color: #00FFB1;
+        border-color: #00FFB1; }
+    .theme-dark .app-container .button {
+      border: 2px solid #e7792b;
+      color: #e7792b;
+      border-color: #e7792b;
+      background-color: #fff;
+      text-transform: none; }
+      .theme-dark .app-container .button:hover {
+        color: #00FFB1;
+        border-color: #00FFB1; }
+
 /****** State ******/
 /****** Mobile ******/
 /**
 * Responsive Screen
-*  config screen.scss
-*
 * --> Responsive Web Design <--
 *     Mobile First Web Design
 *
+* Select the type of Responsive.
 */
+/****** Grid options Bootstrap 4  ******/
 /****** Responsive Web Design  ******/
+/* @if map-get($responsive , responsiveWebDesing) == true {
+    @import 'Responsive_Screen/Responsive-Web-Design';
+} */
 /**
 *  Grid options Bootstrap 4
 *   Responsive Web Design
 *    (Desktop to Mobile)
-*     -> Extra small <576px = .col-
-*     -> Small ≥576px = .col-sm-
-*     -> Medium ≥768px = .col-md-
-*     -> Large ≥992px = .col-lg-
-*     -> Extra large ≥1200px = .col-xl-
+  *     -> Small <576px        = col
+  *     -> Medium ≥768px       = sm
+  *     -> Large ≥992px        = md
+  *     -> Extra large ≥1200px = lg
+  *     -> Standard ≥1366px    = xl
+  *     -> Standard ≥1920px    = xxl
 */
-/****** Mobile First Web Design  ******/
 /**
-*  Grid options Bootstrap 4
-*   --> Mobile First Web Design <--
-*        (Mobile to Desktop)
-*     -> Extra small <576px = .col-
-*     -> Small ≥576px = .col-sm-
-*     -> Medium ≥768px = .col-md-
-*     -> Large ≥992px = .col-lg-
-*     -> Extra large ≥1200px = .col-xl-
-*/
+     *  Web responsive
+     *    => min-width and max-width
+     *    Media puntuales.
+     */
+/**
+   *  Web responsive
+   *    => max-width
+   *    Media a partir de.
+   */
+/****** Mobile First Web Design  ******/
+/* @if map-get($responsive , mobileFirst) == true {
+    @import 'Responsive_Screen/Mobile-First-Web-Design';
+} */
 /****** Query-Mixins  ******/
 /**
-* Responsive
-* Adjustment from a maximum size
-
-* Break Points
-    $bp__xs: 480;
-    $bp__sm: 768;
-    $bp__md: 992;
-    $bp__lg: 1200;
-    $bp__xl: 1366;
-    $bp__xxl: 1920;
-
-* Method
-Method by segment (Mobile <=> Desktop)
-Mobile First Method
-Non-Mobile First Method
-
-* Mode of use :
-   .sidebar {
-    width: 33.33%;
-      @include bp (sm) {
-        width: 100%;
-      }
-   }
-*/
-/**
-* Method by segment
-*  Mobile <=> Desktop
-*  Break points by ranges
-**/
-/**
-* Non-Mobile First Method
-*  Desktop > Mobile
-**/
-/**
-* Mobile First Method
-*  Mobile > Desktop
-**/
-/*@media all and (max-width: 1199px) { ... }
-  @media all and (max-width: 991px) { ... }
-  @media all and (max-width: 768px) { ... }
-  @media all and (max-width: 575px) { ... }*/
-/*==============================================================================================================================*/
-/**
-* Responsive
-* Import Files Mobiles
-* Mixin -> Adjustment from a maximum size
-*/
+   *  Grid options Bootstrap 4
+  *     -> Small <576px        = col
+  *     -> Medium ≥768px       = sm
+  *     -> Large ≥992px        = md
+  *     -> Extra large ≥1200px = lg
+  *     -> Standard ≥1366px    = xl
+  *     -> Standard ≥1920px    = xxl
+  *
+  *     => min-width and max-width  : bp(col);
+  *     => max-width                : bp(col-max);
+  *
+  *     => Orientation - landscape.
+  *          -> Mobile  : bp(mv-lan);
+  *          -> Table   : bp(tb-lan);
+  *          -> map_get($widthGrid, Medium) : bp(md-lan);
+  *
+  *     => Orientation - portrait.
+  *          -> Mobile  : bp(mv-por);
+  *          -> Table   : bp(tb-por);
+  *          -> map_get($widthGrid, Medium) : bp(md-por);
+  *
+  * Mode of use :
+  *  @include bp (sm) {
+  *    width: 100%;
+  *  }
+ */
 /****** Print ******/
 /**
 * Estilos Impresion
 **/
-@media print {
-  /**
-  * Estilos Globales
-  **/
-  /**
-  * Clase impide imprimir
-  **/
-  .no-print {
-    display: none !important;
-    height: 0;
-    width: 0; }
-  /**
-*  Indicamos el salto de pagina
-*/
-  .lineJumpPrint {
-    display: block;
-    page-break-before: always; }
-  /**
-  * Estilos Layouts
-  **/ }

@@ -1,96 +1,74 @@
 /* Scroll css
  ============================================================*/
+
 html {
-
-  scrollbar {
-    width: 8px;
-    height: 10px;
-  }
-
-  scrollbar-button {
-    width: 8px;
-    height: 5px;
-  }
-
-  // btn scroll
-  scrollbar-thumb {
-    background: claro($gris, 40%);
-    border: 71px none $blanco;
-    border-radius: 31px;
-  }
-
-  scrollbar-thumb:hover {
-    background: $gris;
-  }
-
-  scrollbar-thumb:active {
-    background: $gris;
-  }
-
-  // barra scroll
-  scrollbar-track {
-    background: $gris;
-    width: 2px;
-    border: 3px solid $blanco;
-    border-radius: 34px;
-  }
-
-  scrollbar-track:hover {
-    background: claro($gris, 40%);
-  }
-
-  scrollbar-track:active {
-    background: claro($gris, 40%);
-  }
-
-  scrollbar-corner {
-
-  }
-
-  //webkit
-
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 10px;
-  }
-
-  ::-webkit-scrollbar-button {
-    width: 8px;
-    height: 5px;
-  }
-
-  // btn scroll
-  ::-webkit-scrollbar-thumb {
-    background: claro($gris, 40%);
-    border: 71px none $blanco;
-    border-radius: 31px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: $gris;
-  }
-
-  ::-webkit-scrollbar-thumb:active {
-    background: $gris;
-  }
-
-  // barra scroll
-  ::-webkit-scrollbar-track {
-    background: $gris;
-    width: 2px;
-    border: 3px solid $blanco;
-    border-radius: 34px;
-  }
-
-  ::-webkit-scrollbar-track:hover {
-    background: claro($gris, 40%);
-  }
-
-  ::-webkit-scrollbar-track:active {
-    background: claro($gris, 40%);
-  }
-
-  ::-webkit-scrollbar-corner {
-
-  }
+    scrollbar {
+        width: 8px;
+        height: 10px;
+    }
+    scrollbar-button {
+        width: 8px;
+        height: 5px;
+    }
+    // btn scroll
+    scrollbar-thumb {
+        background: claro(map-get( $colors, t-grey), 40%);
+        border: 71px none map-get( $colors, t-white);
+        border-radius: 31px;
+    }
+    scrollbar-thumb:hover {
+        background: map-get( $colors, t-grey);
+    }
+    scrollbar-thumb:active {
+        background: map-get( $colors, t-grey);
+    }
+    // barra scroll
+    scrollbar-track {
+        background: map-get( $colors, t-grey);
+        width: 2px;
+        border: 3px solid map-get( $colors, t-white);
+        border-radius: 34px;
+    }
+    scrollbar-track:hover {
+        background: claro(map-get( $colors, t-grey), 40%);
+    }
+    scrollbar-track:active {
+        background: claro(map-get( $colors, t-grey), 40%);
+    }
+    scrollbar-corner {}
+    //webkit
+     ::-webkit-scrollbar {
+        width: 8px;
+        height: 10px;
+    }
+     ::-webkit-scrollbar-button {
+        width: 8px;
+        height: 5px;
+    }
+    // btn scroll
+     ::-webkit-scrollbar-thumb {
+        background: claro(map-get( $colors, t-grey), 40%);
+        border: 71px none map-get( $colors, t-white);
+        border-radius: 31px;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        background: map-get( $colors, t-grey);
+    }
+     ::-webkit-scrollbar-thumb:active {
+        background: map-get( $colors, t-grey);
+    }
+    // barra scroll
+     ::-webkit-scrollbar-track {
+        background: map-get( $colors, t-grey);
+        width: 2px;
+        border: 3px solid map-get( $colors, t-white);
+        border-radius: 34px;
+    }
+     ::-webkit-scrollbar-track:hover {
+        background: claro(map-get( $colors, t-grey), 40%);
+    }
+     ::-webkit-scrollbar-track:active {
+        background: claro(map-get( $colors, t-grey), 40%);
+    }
+     ::-webkit-scrollbar-corner {}
 }

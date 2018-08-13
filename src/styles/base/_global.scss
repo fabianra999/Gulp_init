@@ -7,35 +7,25 @@
 
 
 /*====== Sass ======*/
+
 @import "sass/variables";
+@import "sass/themeCustom";
 @import "sass/mixin";
 @import "sass/iteraciones";
 @import "sass/funciones";
 @import "sass/condicionales";
 
 /*====== Global ======*/
+
 @import "global/scroll";
 @import "global/font";
 @import "global/font-face";
 @import "global/customBootstrap";
 
 /*====== Components ======*/
+
 @import "components/icons";
 
 /*====== body ======*/
+
 @import "global/body";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

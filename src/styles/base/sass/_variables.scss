@@ -1,11 +1,9 @@
 // $varables: valor; 
 // - tyene scout 
 // - Interpolacion: saca hijo del padre  @at-root p{color: $tomato_1;}
-
 //               Ejempl0:
 // $var: 2;
 // $company: youtube;
-
 // .div-#{$company}:nth-child(#{$var}){
 //  background: red;
 //  &::before {
@@ -15,22 +13,7 @@
 
 /* Varables Colores
 ===================================================*/
-
 //colores
-$rojo: #932e30;
-$azul: #2e8b9b;
-$verde: #a3bd31;
-$naranja: #d37c32;
-$amarillo: #F29100;
-$blanco: #ffffff;
-$negro: #000000;
-$gris: #4c4c4c;
-
-$whatsapp: #65a445;
-$facebook: #253a81;
-$instagram: #38619f;
-$mail: #2e8b9b;
-
 $colors: (
         t-red: #932e30,
         t-blue: #2e8b9b,
@@ -39,21 +22,39 @@ $colors: (
         t-yellow: #F29100,
         t-white: #ffffff,
         t-black: #000000,
-        t-grey: #4c4c4c,
+        t-grey: #333333,
         t-grey2: #495057,
-        whatsapp: #65a445,
-        facebook: #253a81,
-        instagram: #38619f,
-        mail: #2e8b9b
+        t-greyC: #f8f9fa,
+        themeInfo:(
+                name: 'singular',
+          // NavBar
+                navbar: #c43e1e,
+                nav-item: #fff,
+          // Layout
+                t-grey: #9c9c9c,
+          // Theme
+                colorTheme-1: #c43e1e,
+                colorTheme-2: #e7792b,
+                colorTheme-3: #FF4A19,
+                colorTheme-4: #00919f,
+                colorTheme-5: #00FFB1,
+          // Footer
+                footer: #505050,
+                footerColor: #fff,
+                footerLink: #e7792b,
+                footerBorder: #e7792b,
+        ),
+        social:(
+                whatsapp: #65a445,
+                facebook: #253a81,
+                instagram: #38619f,
+                mail: #2e8b9b,
+        ),
 );
-
-$loader: (
-        odd: map_get($colors, t-orange),
-        even: map_get($colors, t-blue)
-);
+$loader: ( odd: map_get($colors, t-orange), even: map_get($colors, t-blue));
 
 /* Path Sass
 ===================================================*/
+
 $path-fonts: '../../components/fonts/';
 $path-img: '../images';
-

@@ -1,0 +1,40 @@
+/**
+ Themes Web.
+   => Define the theme on the map $themes.
+   => Class for the theme theme-$themes.key in body.
+   => Use of the theme:
+     //@include themCustom($themes) {
+        background-color: themed('backgroundColor');
+      }
+ */
+
+
+/*
+ * Theme definitions
+ */
+
+$themes: ( light: ( backgroundColor: map_get($colors, t-white), textColor: map_get(map_get($colors, themeInfo), colorTheme-4), buttonTextColor: map_get(map_get($colors, themeInfo), colorTheme-4), buttonTextTransform: none, buttonTextHoverColor: map_get(map_get($colors, themeInfo), colorTheme-5), buttonColor : map_get(map_get($colors, themeInfo), nav-item), buttonBorder: 2px solid map_get(map_get($colors, themeInfo), colorTheme-4), ), dark: ( backgroundColor: map_get($colors, t-white), textColor: map_get(map_get($colors, themeInfo), colorTheme-2), buttonTextColor: map_get(map_get($colors, themeInfo), colorTheme-2), buttonTextTransform: none, buttonTextHoverColor: map_get(map_get($colors, themeInfo), colorTheme-5), buttonColor : map_get(map_get($colors, themeInfo), nav-item), buttonBorder: 2px solid map_get(map_get($colors, themeInfo), colorTheme-2), ), );
+
+/*
+ * Implementation of themes
+ */
+
+@mixin themCustom($themes:$themes) {
+    @each $theme,
+    $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
