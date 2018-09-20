@@ -1,3 +1,3 @@
 (function () {
-  console.log('hokla test');
+  console.log('hola test 2');
 })();

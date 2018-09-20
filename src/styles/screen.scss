@@ -50,4 +50,7 @@ $path-img: '../images/png';
 
 /****** Print ******/
 
-@import 'print/p-screen'
+@import 'print/p-screen';
+body {
+    content: 'Hola mundo';
+}
