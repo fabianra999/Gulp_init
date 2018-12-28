@@ -27,6 +27,12 @@
 /* Path Sass
 ===================================================*/
 /**
+* Map deep get
+* @param {Map} $map - Map
+* @param {Arglist} $keys - Key chain
+* @return {*} - Desired value
+**/
+/**
  Themes Web.
    => Define the theme on the map $themes.
    => Class for the theme theme-$themes.key in body.
@@ -441,7 +447,7 @@ body {
   *    width: 100%;
   *  }
  */
-/****** Print ******/
+/******* Print *******/
 /**
 * Estilos Impresion
 **/

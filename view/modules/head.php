@@ -13,6 +13,9 @@
   <link rel="mask-icon" href="components/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
 
+<!-- Full w -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
   <!-- styles -->
   <link rel="stylesheet" href="dist/libs/styles/libsMain.min.css">
   <link rel="stylesheet" href="dist/styles/screen.min.css">

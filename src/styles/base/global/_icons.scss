@@ -1,0 +1,72 @@
+/**
+ * Icons
+ */
+
+i[class*="icon__"] {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    &::before {
+        content: "";
+        display: block;
+        width: 54px;
+        height: 54px;
+        background-size: cover;
+        background-color: grey;
+    }
+}
+
+$listaIconos: bateria,
+camara_f,
+camara_t,
+censores,
+consola,
+consola_bateria,
+consola_cable,
+consola_censor,
+consola_conexion,
+consola_dvd,
+consola_procesador,
+consola_ram,
+consola_rom,
+consola_sistema,
+dual,
+pantalla,
+pc,
+pc_bateria,
+pc_cable,
+pc_censores,
+pc_conexion,
+pc_gpu,
+pc_procesador,
+pc_ram,
+pc_rom,
+pc_sistema,
+procesador,
+ram,
+rom,
+sistema,
+sonido,
+sonido_bateria,
+sonido_cable,
+sonido_conexion,
+sonido_dvd,
+sonido_rom,
+sonido_sensores,
+sonido_sistema,
+sonido_w,
+tv,
+tv_bateria,
+tv_cable,
+tv_censor,
+tv_conexion,
+tv_procesador,
+tv_ram,
+tv_rom,
+tv_sistema,
+call;
+@each $itemIcon in $listaIconos {
+    i.icon__#{$itemIcon}::before {
+        mask: url(../images/icons/#{$itemIcon}.svg) no-repeat center;
+    }
+}

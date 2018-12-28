@@ -1,5 +1,5 @@
-// $varables: valor; 
-// - tyene scout 
+// $varables: valor;
+// - tyene scout
 // - Interpolacion: saca hijo del padre  @at-root p{color: $tomato_1;}
 //               Ejempl0:
 // $var: 2;
@@ -13,48 +13,31 @@
 
 /* Varables Colores
 ===================================================*/
+
 //colores
-$colors: (
-        t-red: #932e30,
-        t-blue: #2e8b9b,
-        t-green: #a3bd31,
-        t-orange: #d37c32,
-        t-yellow: #F29100,
-        t-white: #ffffff,
-        t-black: #000000,
-        t-grey: #333333,
-        t-grey2: #495057,
-        t-greyC: #f8f9fa,
-        themeInfo:(
-                name: 'singular',
-          // NavBar
-                navbar: #c43e1e,
-                nav-item: #fff,
-          // Layout
-                t-grey: #9c9c9c,
-          // Theme
-                colorTheme-1: #c43e1e,
-                colorTheme-2: #e7792b,
-                colorTheme-3: #FF4A19,
-                colorTheme-4: #00919f,
-                colorTheme-5: #00FFB1,
-          // Footer
-                footer: #505050,
-                footerColor: #fff,
-                footerLink: #e7792b,
-                footerBorder: #e7792b,
-        ),
-        social:(
-                whatsapp: #65a445,
-                facebook: #253a81,
-                instagram: #38619f,
-                mail: #2e8b9b,
-        ),
-);
+$colors: ( t-red: #932e30, t-blue: #2e8b9b, t-green: #a3bd31, t-orange: #d37c32, t-yellow: #f29100, t-white: #ffffff, t-black: #000000, t-grey: #333333, t-grey2: #495057, t-greyC: #f8f9fa, themeInfo: ( name: "singular", // NavBar
+navbar: #c43e1e, nav-item: #fff, // Layout
+t-grey: #9c9c9c, // Theme
+colorTheme-1: #c43e1e, colorTheme-2: #e7792b, colorTheme-3: #ff4a19, colorTheme-4: #00919f, colorTheme-5: #00ffb1, // Footer
+footer: #505050, footerColor: #fff, footerLink: #e7792b, footerBorder: #e7792b), social: ( whatsapp: #65a445, facebook: #253a81, instagram: #38619f, mail: #2e8b9b));
 $loader: ( odd: map_get($colors, t-orange), even: map_get($colors, t-blue));
 
 /* Path Sass
 ===================================================*/
 
-$path-fonts: '../../components/fonts/';
-$path-img: '../images';
+$path-fonts: "../../components/fonts/";
+$path-img: "../images";
+
+/**
+* Map deep get
+* @param {Map} $map - Map
+* @param {Arglist} $keys - Key chain
+* @return {*} - Desired value
+**/
+
+@function map-c($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
